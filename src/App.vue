@@ -1,22 +1,16 @@
 <template>
   <div>
-    <h1>新增标题</h1>
+    <router-view></router-view>
   </div>
 </template>
 
 <script setup lang="ts">
-const str = '我爱你祖国'
-console.log(str)
+import { onMounted } from 'vue'
+import { reqLogin } from './api/user/index'
+
+onMounted(() => {
+  reqLogin({ username: 'admin', password: '123456' })
+})
 </script>
 
-<style lang="scss" scoped>
-.box {
-  width: 600px;
-  height: 400px;
-  background: #000;
-  h1 {
-    width: 100%;
-    height: 100%;
-  }
-}
-</style>
+<style scoped></style>
