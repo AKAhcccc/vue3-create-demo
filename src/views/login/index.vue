@@ -10,17 +10,22 @@
       <el-row>
         <el-col :span="12" :xs="0"></el-col>
         <el-col :span="12" :xs="24">
-          <el-form class="login_form">
+          <el-form
+            class="login_form"
+            :model="loginForm"
+            :rules="rules"
+            ref="logins"
+          >
             <h1>百步穿杨一发脑洞大开</h1>
             <h2>天女散花两枪心胸宽广</h2>
-            <el-form-item>
+            <el-form-item prop="username">
               <el-input
                 :prefix-icon="User"
                 v-model="loginForm.username"
                 placeholder="admin或者system"
               ></el-input>
             </el-form-item>
-            <el-form-item>
+            <el-form-item prop="password">
               <el-input
                 :prefix-icon="Lock"
                 v-model="loginForm.password"
@@ -31,6 +36,7 @@
             </el-form-item>
             <el-form-item>
               <el-button
+                :loading="loading"
                 class="login_button"
                 type="primary"
                 size="default"
@@ -47,10 +53,14 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { loadFull } from 'tsparticles'
 import type { Engine } from 'tsparticles-engine'
 import { User, Lock } from '@element-plus/icons-vue'
+import { useRouter, useRoute } from 'vue-router'
+import { ElNotification } from 'element-plus'
+// 引入获取时间戳的函数
+import { getTime } from '@/utils/time'
 // 引用用户相关的小仓库
 import useUserStore from '@/store/modules/user'
 const particlesInit = async (engine: Engine) => {
@@ -137,15 +147,109 @@ const options = reactive({
   },
   detectRetina: true,
 })
+// 获取el-form组件
+let logins = ref()
+// 获取路由器
+let $router = useRouter()
+// 定义变量控制登录按钮loading
+let loading = ref(false)
+// 获取路由对象
+let $route = useRoute()
+
 // 收集表单信息，用户名密码,reactive是响应式代理对象或数组
 let loginForm = reactive({ username: 'admin', password: '123456' })
 let useStore = useUserStore()
+
 // 设置点击登录事件绑定
-const login = () => {
+const login = async () => {
+  // 保证全部表单校验通过在发起请求
+  await logins.value.validate()
+  loading.value = true
   // 通知仓库菠萝发登录请求
   // 请求成功展示数据
   // 请求失败，弹出登录信息
-  useStore.userLogin()
+  try {
+    // 保证登录成功
+    await useStore.userLogin(loginForm)
+    // 编程式导航跳转首页路由
+    // 判断登录的时候，路由当前是否有query参数，如果有就往query跳转，如果没有跳转至首页
+    let redirect: any = $route.query.redirect
+    $router.push({ path: redirect || '/' })
+    // 登录成功提示信息
+    ElNotification({
+      type: 'success',
+      message: '欢迎回来',
+      title: `Hi,${getTime()}好`,
+    })
+    loading.value = false
+  } catch (error) {
+    loading.value = false
+    //登录失败
+    ElNotification({
+      type: 'error',
+      message: (error as Error).message,
+    })
+  }
+}
+// 自定义校验规则函数  //用户名
+const validatorUserName = (rule: any, value: any, callback: any) => {
+  // rule即为校验规则对象
+  // value即为表单元素文本内容
+  //callback 如果符合条件，放行通过
+  if (value.length >= 5) {
+    callback()
+  } else {
+    callback(new Error('账号长度至少五位'))
+  }
+  console.log(rule)
+  console.log(value)
+  console.log(callback)
+}
+// 自定义校验规则函数  //密码
+const validatorPasswords = (rule: any, value: any, callback: any) => {
+  console.log(rule)
+
+  if (value >= 6) {
+    callback()
+  } else {
+    callback(new Error('密码长度至少六位'))
+  }
+}
+// 定义表单对象校验对象
+const rules = {
+  //规则对象属性
+  //required：代表这个字段务必要校验的
+  //min:文本长度至少多少位
+  //max:文本最多多少位
+  //message:"错误信息"
+  //trigger':触发表单时机
+  // validator自定义校验规则
+  username: [
+    // {
+    //   required: true,
+    //   message: '账号长度至少五位',
+    //   trigger: 'change',
+    //   min:5,
+    //   max: 10
+    // },
+    {
+      trigger: 'change',
+      validator: validatorUserName,
+    },
+  ],
+  password: [
+    // {
+    //   required: true,
+    //   message: '密码长度至少六位',
+    //   trigger: 'change',
+    //   min: 6,
+    //   max: 15
+    // },
+    {
+      trigger: 'change',
+      validator: validatorPasswords,
+    },
+  ],
 }
 </script>
 
@@ -181,6 +285,7 @@ body,
       font-size: 30px;
       color: #fff;
     }
+
     .login_button {
       width: 100%;
     }

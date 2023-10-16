@@ -4,13 +4,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { onMounted } from 'vue'
-import { reqLogin } from './api/user/index'
-
-onMounted(() => {
-  reqLogin({ username: 'admin', password: '123456' })
-})
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

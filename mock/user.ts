@@ -4,7 +4,7 @@ function createUserList() {
     {
       userId: 1,
       avatar:
-        'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+        'https://ts1.cn.mm.bing.net/th/id/R-C.82fb345389e7d89f6334a2e59dc4d16d?rik=SXLwZLCbzVZw8Q&riu=http%3a%2f%2fimg.zcool.cn%2fcommunity%2f01664d5867d034a801219c77c8d449.gif&ehk=bXEx5D67vlTp5%2bJ3ttlkZLFGexCMJ1Lac%2bCSqIhFp9E%3d&risl=&pid=ImgRaw&r=0',
       username: 'admin',
       password: '123456',
       desc: '平台管理员',
@@ -16,7 +16,7 @@ function createUserList() {
     {
       userId: 2,
       avatar:
-        'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+        'https://img.zcool.cn/community/01014758300c37a801219c77b4c13d.gif',
       username: 'system',
       password: '123456',
       desc: '系统管理员',
@@ -39,12 +39,11 @@ export default [
     response: ({ body }) => {
       //获取请求体携带过来的用户名与密码
       const { username, password } = body
-      console.log(username, password)
-
       //调用获取用户信息函数,用于判断是否有此用户
       const checkUser = createUserList().find(
         (item) => item.username === username && item.password === password,
       )
+
       //没有用户返回失败信息
       if (!checkUser) {
         return { code: 201, data: { message: '账号或者密码不正确' } }
@@ -61,8 +60,10 @@ export default [
     response: (request) => {
       //获取请求头携带token
       const token = request.headers.token
+      console.log(token, 'token')
       //查看用户信息是否包含有次token用户
       const checkUser = createUserList().find((item) => item.token === token)
+      console.log(checkUser, 'checkUser')
       //没有返回失败的信息
       if (!checkUser) {
         return { code: 201, data: { message: '获取用户信息失败' } }

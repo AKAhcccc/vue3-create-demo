@@ -17,12 +17,18 @@ dependencies:
   ng-particles:
     specifier: ^3.12.0
     version: 3.12.0(@angular/common@16.2.9)(@angular/core@16.2.9)(rxjs@7.8.1)(tsparticles-engine@2.12.0)
+  nprogress:
+    specifier: ^0.2.0
+    version: 0.2.0
   particles.vue3:
     specifier: ^2.12.0
     version: 2.12.0
   pinia:
     specifier: ^2.1.6
     version: 2.1.6(typescript@5.2.2)(vue@3.3.4)
+  progress:
+    specifier: ^2.0.3
+    version: 2.0.3
   tsparticles:
     specifier: ^2.12.0
     version: 2.12.0
@@ -46,6 +52,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^17.7.0
     version: 17.7.0
+  '@types/nprogress':
+    specifier: ^0.2.1
+    version: 0.2.1
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.7.5
     version: 6.7.5(@typescript-eslint/parser@6.7.5)(eslint@8.51.0)(typescript@5.2.2)
@@ -886,6 +895,10 @@ packages:
 
   /@types/normalize-package-data@2.4.2:
     resolution: {integrity: sha512-lqa4UEhhv/2sjjIQgjX8B+RBjj47eo0mzGasklVJ78UKGQY1r0VpB9XHDaZZO9qzEFDdy4MrXLuEaSmPrPSe/A==}
+    dev: true
+
+  /@types/nprogress@0.2.1:
+    resolution: {integrity: sha512-TYuyVnp+nOnimgdOydDIDYIxv2kSeuJZw4tF0p/KG7hpzcMF1WkHaREwM8O4blqfT1F7rq0nht6Ko2KVUfWzBA==}
     dev: true
 
   /@types/resolve@1.17.1:
@@ -3721,6 +3734,10 @@ packages:
       path-key: 4.0.0
     dev: true
 
+  /nprogress@0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
+
   /nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
     dependencies:
@@ -4077,6 +4094,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
     dev: true
+
+  /progress@2.0.3:
+    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
+    engines: {node: '>=0.4.0'}
+    dev: false
 
   /proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}

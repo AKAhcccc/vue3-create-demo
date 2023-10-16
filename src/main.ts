@@ -18,12 +18,16 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import router from './router'
 // 引入仓库
 import pinia from '@/store'
+// 引入路由鉴权文件
+import permission from './permission'
 
 const app = createApp(App)
 // 安装仓库
 app.use(pinia)
 // 安装自定义插件
 app.use(globalComponent)
+// 安装全局守卫
+app.use(permission)
 // 集成粒子背景效果
 app.use(Particles)
 // 获取应用的实例对象
