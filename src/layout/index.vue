@@ -3,7 +3,6 @@
     <!-- 左侧菜单 -->
     <div
       class="layout_slider"
-      :class="{ fold: LayoutOutSettingStore.fold ? true : false }"
     >
       <Logo></Logo>
       <!-- 展示菜单 -->
@@ -108,7 +107,7 @@ let LayoutOutSettingStore = useLayOutSettingStore()
     position: absolute;
     width: calc(100% - $base-menu-width);
     height: calc(100vh - $base-tabber-top);
-    background-color: pink;
+    background-color: #fff;
     left: $base-menu-width;
     top: $base-tabber-top;
     padding: 20px;

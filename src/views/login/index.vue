@@ -29,7 +29,7 @@
               <el-input
                 :prefix-icon="Lock"
                 v-model="loginForm.password"
-                placeholder="123456"
+                placeholder="atguigu123"
                 show-password
                 type="password"
               ></el-input>
@@ -157,7 +157,7 @@ let loading = ref(false)
 let $route = useRoute()
 
 // 收集表单信息，用户名密码,reactive是响应式代理对象或数组
-let loginForm = reactive({ username: 'admin', password: '123456' })
+let loginForm = reactive({ username: 'admin', password: 'atguigu123' })
 let useStore = useUserStore()
 
 // 设置点击登录事件绑定
@@ -209,7 +209,7 @@ const validatorUserName = (rule: any, value: any, callback: any) => {
 const validatorPasswords = (rule: any, value: any, callback: any) => {
   console.log(rule)
 
-  if (value >= 6) {
+  if (value.length >= 6) {
     callback()
   } else {
     callback(new Error('密码长度至少六位'))

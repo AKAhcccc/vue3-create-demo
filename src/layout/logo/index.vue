@@ -27,6 +27,7 @@ import setting from '@/setting'
     widows: 30px;
     height: 30px;
     border-radius: 10px;
+    margin-right:15px;
   }
 
   .title {
