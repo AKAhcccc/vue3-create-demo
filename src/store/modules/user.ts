@@ -3,8 +3,12 @@ import { defineStore } from 'pinia'
 // 引入登录请求接口
 import { reqLogin, reqUserInfo, reqLogout } from '@/api/user/index'
 // 引入数据类型
-import type { userState } from './types';
-import type { loginFormData,loginResponseData,userInfoResponseData } from '@/api/user/type'
+import type { userState } from './types'
+import type {
+  loginFormData,
+  loginResponseData,
+  userInfoResponseData,
+} from '@/api/user/type'
 // 引入外部路由
 import { constantRoute } from '../../router/routes'
 // 引入操作本地存储的工具方法
@@ -27,11 +31,11 @@ const useUserStore = defineStore('User', {
       console.log(data)
       // 登录请求
       const result: loginResponseData = await reqLogin(data)
-      console.log(result, "loginResult");
+      console.log(result, 'loginResult')
       // 请求200 -> token
       if (result.code == 200) {
         // 由于pinia存储数据利用js对象
-        this.token = (result.data as string)
+        this.token = result.data as string
         // 本地存储持久化
         SET_TOKEN(result.data as string)
         // 保证当前async函数 返回一个成功的promise
@@ -45,7 +49,7 @@ const useUserStore = defineStore('User', {
     // 获取用户详情信息
     async userInfo() {
       // 获取用户的信息，存储于仓库当中，[头像，名字]
-      const result:userInfoResponseData = await reqUserInfo()
+      const result: userInfoResponseData = await reqUserInfo()
       console.log(result.data, 'result')
       // 如果获取用户信息成功，存储一下用户信息
       if (result.code === 200) {
@@ -59,13 +63,13 @@ const useUserStore = defineStore('User', {
 
     // 退出登录
     async userLogout() {
-      let result:any = await reqLogout()
+      let result: any = await reqLogout()
       if (result.code === 200) {
-        console.log(result, "result123");
-        ; (this.token = ''), (this.username = ''), (this.avatar = '')
+        console.log(result, 'result123')
+        ;(this.token = ''), (this.username = ''), (this.avatar = '')
         REMOVE_TOKEN()
         return 'ok'
-      }else {
+      } else {
         return Promise.reject(new Error(result.message))
       }
     },

@@ -9,7 +9,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   // 获取各种环境下对应的变量
   // mode模式变量，默认是开发模式
   // process.cwd()我要加载那个文件，以及文件位置
-  let env = loadEnv(mode, process.cwd());
+  let env = loadEnv(mode, process.cwd())
 
   // 获取各种环境下对应的变量
   return {
@@ -43,8 +43,8 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
           changeOrigin: true,
           // 路径重写
           rewrite: (path) => path.replace(/^\/api/, ''),
-        }
-      }
-    }
+        },
+      },
+    },
   }
 }

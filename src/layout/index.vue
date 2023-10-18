@@ -1,9 +1,7 @@
 <template>
   <div class="layout_context">
     <!-- 左侧菜单 -->
-    <div
-      class="layout_slider"
-    >
+    <div class="layout_slider">
       <Logo></Logo>
       <!-- 展示菜单 -->
       <!-- 滚动组件 -->
