@@ -22,9 +22,9 @@ router.beforeEach(async (to: any, from: any, next: any) => {
   // next:路由的放行函数
   NProgress.start()
   // 获取token 判断用户是否登录
-  let token = userStore.token
+  const token = userStore.token
   // 用户名字
-  let username = userStore.username
+  const username = userStore.username
   // 用户登录判断
   if (token) {
     // 登录成功，访问login不能访问，指向home
