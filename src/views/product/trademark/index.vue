@@ -146,7 +146,7 @@ let trademarkParams = reactive<TradeMark>({
 // 获取已有品牌的接口封装为一个函数：在任何情况下获取数据，调用函数即可
 const getHasTrademark = async (pager = 1) => {
   // pageNo.value = pager
-  console.log(pager);
+  console.log(pager)
   let result: TradeMarkRecordsData = await reqHasTrademark(
     pageNo.value,
     limit.value,

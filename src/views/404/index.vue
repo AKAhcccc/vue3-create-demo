@@ -1,11 +1,10 @@
 <template>
   <div class="box">
-    <img src="../../assets/images/404.png" alt="">
+    <img src="../../assets/images/404.png" alt="" />
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .box {

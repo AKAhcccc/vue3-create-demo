@@ -16,7 +16,7 @@ import { constantRoute, asyncRoute, anyRoute } from '@/router/routes'
 // 引入项目中的路由文件
 import router from '@/router'
 // 引入深拷贝方法
-// @ts-ignore
+// @ts-expect-error
 import cloneDeep from 'lodash/cloneDeep'
 
 // 用于过滤当前用户需要展示的异步路由
@@ -41,7 +41,7 @@ const useUserStore = defineStore('User', {
       username: '',
       avatar: '',
       // 存储按钮权限
-      buttons:[]
+      buttons: [],
     }
   },
   //处理异步|逻辑
@@ -70,19 +70,27 @@ const useUserStore = defineStore('User', {
       const result: userInfoResponseData = await reqUserInfo()
       // 如果获取用户信息成功，存储一下用户信息
       if (result.code === 200) {
-        console.log(result,"result11");
-        
+        console.log(result, 'result11')
+
         this.username = result.data.name
         this.avatar = result.data.avatar
         // 计算当前用户需要展示的异步路由
-        let userAsyncRoute = filterAsyncRoute(cloneDeep(asyncRoute),result.data.routes)
+        const userAsyncRoute = filterAsyncRoute(
+          cloneDeep(asyncRoute),
+          result.data.routes,
+        )
         // 菜单的数据
-        this.menuRoutes = [...constantRoute,...userAsyncRoute,anyRoute,anyRoute];
+        this.menuRoutes = [
+          ...constantRoute,
+          ...userAsyncRoute,
+          anyRoute,
+          anyRoute,
+        ]
         // 目前路由器管理的只有常量路由：用户计算完毕异步路由、任意路由动态追加
-        [...userAsyncRoute,anyRoute].forEach((route:any) => {
+        ;[...userAsyncRoute, anyRoute].forEach((route: any) => {
           router.addRoute(route)
         })
-        console.log(router.getRoutes(),'routes');
+        console.log(router.getRoutes(), 'routes')
         return 'ok'
       } else {
         return Promise.reject(new Error(result.message))
@@ -94,7 +102,7 @@ const useUserStore = defineStore('User', {
       const result: any = await reqLogout()
       if (result.code === 200) {
         console.log(result, 'result123')
-          ; (this.token = ''), (this.username = ''), (this.avatar = '')
+        ;(this.token = ''), (this.username = ''), (this.avatar = '')
         REMOVE_TOKEN()
         return 'ok'
       } else {

@@ -1,13 +1,7 @@
 <template>
-    <div>
-        个人轨迹监控
-    </div>
+  <div>个人轨迹监控</div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>
