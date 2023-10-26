@@ -8,9 +8,8 @@ const request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 5000,
 })
-// 第二步：request实例添加请求与响应拦截器
+// 第二步：request实例添加请求拦截器
 request.interceptors.request.use((config) => {
-  console.log(config)
   // 获取用户相关的小仓库:获取仓库内部token,登录成功以后携带给服务器
   const userStore = useUserStore()
   if (userStore.token) {
@@ -23,7 +22,6 @@ request.interceptors.request.use((config) => {
 // 第三步：响应拦截器
 request.interceptors.response.use(
   (response) => {
-    console.log(response)
 
     if (response.status === 200) {
       return Promise.resolve(response.data)

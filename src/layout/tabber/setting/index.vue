@@ -44,7 +44,6 @@ import useLayoutOutSettingStore from '../../../store/modules/setting'
 let LayoutOutSettingStore = useLayoutOutSettingStore()
 
 let UserStore = useUserStore()
-console.log(UserStore, 'UserStore')
 
 // 获取路由器
 let $router = useRouter()
