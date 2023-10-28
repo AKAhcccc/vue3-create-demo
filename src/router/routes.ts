@@ -46,79 +46,79 @@ export const constantRoute = [
       icon: 'Monitor',
     },
   },
-  // {
-  //   path: '/ticket',
-  //   component: () => import('@/layout/index.vue'),
-  //   name: 'Ticket',
-  //   meta: {
-  //     title: '八维票务', //菜单标题
-  //     hidden: false,
-  //     icon: 'HomeFilled',
-  //   },
-  //   redirect: '/ticket/trainManagement',
-  //   children: [
-  //     {
-  //       path: '/ticket/trainManagement',
-  //       component: () => import('@/views/ticket/TrainManagement/index.vue'),
-  //       name: 'TrainManagement',
-  //       meta: {
-  //         hidden: false,
-  //         title: '车次管理',
-  //         icon: 'Van',
-  //       },
-  //     },
-  //     {
-  //       path: '/ticket/stationManagement',
-  //       component: () => import('@/views/ticket/StationManagement/index.vue'),
-  //       name: 'StationManagement',
-  //       meta: {
-  //         hidden: false,
-  //         title: '车站管理',
-  //         icon: 'AddLocation',
-  //       },
-  //     },
-  //     {
-  //       path: '/ticket/lineManagement',
-  //       component: () => import('@/views/ticket/LineManagement/index.vue'),
-  //       name: 'LineManagement',
-  //       meta: {
-  //         hidden: false,
-  //         title: '线路管理',
-  //         icon: 'Guide',
-  //       },
-  //     },
-  //     {
-  //       path: '/ticket/ticketManagement',
-  //       component: () => import('@/views/ticket/TicketManagement/index.vue'),
-  //       name: 'TicketManagement',
-  //       meta: {
-  //         hidden: false,
-  //         title: '车票管理',
-  //         icon: 'Ticket',
-  //       },
-  //     },
-  //     {
-  //       path: '/ticket/orderManagement',
-  //       component: () => import('@/views/ticket/OrderManagement/index.vue'),
-  //       name: 'OrderManagement',
-  //       meta: {
-  //         hidden: false,
-  //         title: '订单管理',
-  //         icon: 'List',
-  //       },
-  //     },
-  //     {
-  //       path: '/ticket/personalTrajectory',
-  //       component: () => import('@/views/ticket/PersonalTrajectory/index.vue'),
-  //       name: 'PersonalTrajectory',
-  //       meta: {
-  //         hidden: false,
-  //         title: '个人轨迹监控',
-  //         icon: 'Place',
-  //       },
-  //     },
-  //   ],
-  // },
+  {
+    path: '/ticket',
+    component: () => import('@/layout/index.vue'),
+    name: 'Ticket',
+    meta: {
+      title: '八维票务', //菜单标题
+      hidden: false,
+      icon: 'HomeFilled',
+    },
+    redirect: '/ticket/trainManagement',
+    children: [
+      {
+        path: '/ticket/trainManagement',
+        component: () => import('@/views/ticket/TrainManagement/index.vue'),
+        name: 'TrainManagement',
+        meta: {
+          hidden: false,
+          title: '车次管理',
+          icon: 'Van',
+        },
+      },
+      {
+        path: '/ticket/stationManagement',
+        component: () => import('@/views/ticket/StationManagement/index.vue'),
+        name: 'StationManagement',
+        meta: {
+          hidden: false,
+          title: '车站管理',
+          icon: 'AddLocation',
+        },
+      },
+      {
+        path: '/ticket/lineManagement',
+        component: () => import('@/views/ticket/LineManagement/index.vue'),
+        name: 'LineManagement',
+        meta: {
+          hidden: false,
+          title: '线路管理',
+          icon: 'Guide',
+        },
+      },
+      {
+        path: '/ticket/ticketManagement',
+        component: () => import('@/views/ticket/TicketManagement/index.vue'),
+        name: 'TicketManagement',
+        meta: {
+          hidden: false,
+          title: '车票管理',
+          icon: 'Ticket',
+        },
+      },
+      {
+        path: '/ticket/orderManagement',
+        component: () => import('@/views/ticket/OrderManagement/index.vue'),
+        name: 'OrderManagement',
+        meta: {
+          hidden: false,
+          title: '订单管理',
+          icon: 'List',
+        },
+      },
+      {
+        path: '/ticket/personalTrajectory',
+        component: () => import('@/views/ticket/PersonalTrajectory/index.vue'),
+        name: 'PersonalTrajectory',
+        meta: {
+          hidden: false,
+          title: '个人轨迹监控',
+          icon: 'Place',
+        },
+      },
+    ],
+  },
   {
     //404
     path: '/404',

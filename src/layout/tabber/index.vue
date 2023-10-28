@@ -23,12 +23,7 @@ export default {
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
-  background-image: linear-gradient(
-    to right,
-    rgb(232, 223, 223),
-    rgb(201, 178, 178),
-    rgb(197, 165, 165)
-  );
+  background-color: #fff;
   .tabber_left {
     display: flex;
     align-content: center;

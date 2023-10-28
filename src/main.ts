@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
+// 全局引入ECharts
+import ECharts from 'vue-echarts'
+import 'echarts'
 import App from './App.vue'
 // 配置svg矢量图代码
 import 'virtual:svg-icons-register'
@@ -20,8 +23,9 @@ import router from './router'
 import pinia from '@/store'
 // 引入路由鉴权文件
 import permission from './permission'
-
-const app = createApp(App)
+// 实例化getCurrentInstance
+// 挂载ECharts
+const app = createApp(App).component('ECharts',ECharts)
 // 安装仓库
 app.use(pinia)
 // 安装自定义插件

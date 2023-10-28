@@ -105,10 +105,10 @@ let LayoutOutSettingStore = useLayOutSettingStore()
     position: absolute;
     width: calc(100% - $base-menu-width);
     height: calc(100vh - $base-tabber-top);
-    background-color: #fff;
+    background-color: #ECEDEF;
     left: $base-menu-width;
     top: $base-tabber-top;
-    padding: 20px;
+    padding: 10px;
     overflow: auto;
 
     &.fold {
