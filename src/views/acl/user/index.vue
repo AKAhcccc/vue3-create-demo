@@ -18,7 +18,7 @@
     </el-form>
   </el-card>
   <el-card>
-    <el-button type="primary" size="default" @click="addUser">
+    <el-button type="primary" size="default" @click="addUser" v-has="`btn.User.add`">
       添加用户
     </el-button>
     <el-button
@@ -26,6 +26,7 @@
       size="default"
       :disabled="selectIdArr.length ? false : true"
       @click="deleteSelectUser"
+      v-has="`btn.User.remove`"
     >
       批量删除
     </el-button>
@@ -81,6 +82,7 @@
             size="small"
             icon="UserFilled"
             @click="setRole(row)"
+            v-has="`btn.Role.assgin`"
           >
             分配角色
           </el-button>
@@ -89,6 +91,7 @@
             size="small"
             icon="EditPen"
             @click="editUser(row)"
+            v-has="`btn.User.update`"
           >
             编辑
           </el-button>
@@ -97,7 +100,7 @@
             @confirm="deleteUser(row.id)"
           >
             <template #reference>
-              <el-button type="primary" size="small" icon="DeleteFilled">
+              <el-button type="primary" size="small" icon="DeleteFilled" v-has="`btn.User.remove`">
                 删除
               </el-button>
             </template>

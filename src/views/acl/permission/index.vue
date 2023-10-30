@@ -17,6 +17,7 @@
               @click="addMenuItem(row)"
               size="small"
               :disabled="row.level == 4 ? true : false"
+              v-has="`btn.Role.add`"
             >
               {{ row.level == 3 ? '添加功能' : '添加菜单' }}
             </el-button>
@@ -25,6 +26,7 @@
               @click="upDataMenuItem(row)"
               size="small"
               :disabled="row.level == 1 ? true : false"
+              v-has="`btn.Role.update`"
             >
               编辑
             </el-button>
@@ -34,7 +36,7 @@
               @confirm="remove(row.id)"
             >
               <template #reference>
-                <el-button type="primary" size="small">删除</el-button>
+                <el-button type="primary" size="small" v-has="`btn.Role.remove`">删除</el-button>
               </template>
             </el-popconfirm>
           </div>

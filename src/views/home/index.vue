@@ -3,121 +3,273 @@
     <div class="container_top">
       <div class="cart_1">
         <div class="cart_context1">
-          <div class="cart_context1_top"
-            style="display: flex;flex-flow: row;justify-content: space-around;align-items: center;">
+          <div
+            class="cart_context1_top"
+            style="
+              display: flex;
+              flex-flow: row;
+              justify-content: space-around;
+              align-items: center;
+            "
+          >
             <div class="cart_context1_left">
               <SvgIcon name="dp4" color="" width="80px" height="80px"></SvgIcon>
             </div>
             <div class="cart_context1_right">
-              <div class="text1"
-                style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: flex-start;">
+              <div
+                class="text1"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-content: center;
+                  justify-content: center;
+                  align-items: flex-start;
+                "
+              >
                 <div>
                   <span>￥</span>
                   <span class="text1_2">120</span>
                 </div>
-                <div style="margin-top: 15px; color: #000;">
-                  今日已售(元)
-                </div>
+                <div style="margin-top: 15px; color: #000">今日已售(元)</div>
               </div>
               <div></div>
             </div>
           </div>
-          <div class="cart_context1_bottom"
-            style="display: flex; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: flex-start;align-items: flex-start;">
-            <div style="margin-right: 10px;">日同比</div>
+          <div
+            class="cart_context1_bottom"
+            style="
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-content: center;
+              justify-content: flex-start;
+              align-items: flex-start;
+            "
+          >
+            <div style="margin-right: 10px">日同比</div>
             <div
-              style=" display: flex; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: flex-start;align-items: flex-start; color: aquamarine;">
-              增长20% <SvgIcon style="margin-left: 5px;" name="up1" color="" width="20px" height="20px"></SvgIcon>
+              style="
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-start;
+                align-items: flex-start;
+                color: aquamarine;
+              "
+            >
+              增长20%
+              <SvgIcon
+                style="margin-left: 5px"
+                name="up1"
+                color=""
+                width="20px"
+                height="20px"
+              ></SvgIcon>
             </div>
           </div>
         </div>
       </div>
       <div class="cart_1">
         <div class="cart_context1">
-          <div class="cart_context1_top"
-            style="display: flex;flex-flow: row;justify-content: space-around;align-items: center;">
+          <div
+            class="cart_context1_top"
+            style="
+              display: flex;
+              flex-flow: row;
+              justify-content: space-around;
+              align-items: center;
+            "
+          >
             <div class="cart_context1_left">
               <SvgIcon name="dp1" color="" width="80px" height="80px"></SvgIcon>
             </div>
             <div class="cart_context1_right">
-              <div class="text1"
-                style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: flex-start;">
+              <div
+                class="text1"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-content: center;
+                  justify-content: center;
+                  align-items: flex-start;
+                "
+              >
                 <div>
-                  <span class="text1_2" style="color: #559EFD;">208</span>
+                  <span class="text1_2" style="color: #559efd">208</span>
                 </div>
-                <div style="margin-top: 15px; color: #000;">
-                  今日订票数
-                </div>
+                <div style="margin-top: 15px; color: #000">今日订票数</div>
               </div>
               <div></div>
             </div>
           </div>
-          <div class="cart_context1_bottom"
-            style="display: flex; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: flex-start;align-items: flex-start;">
-            <div style="margin-right: 10px;">日同比</div>
+          <div
+            class="cart_context1_bottom"
+            style="
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-content: center;
+              justify-content: flex-start;
+              align-items: flex-start;
+            "
+          >
+            <div style="margin-right: 10px">日同比</div>
             <div
-              style=" display: flex; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: flex-start;align-items: flex-start; color: aquamarine;">
-              增长20% <SvgIcon style="margin-left: 5px;" name="up1" color="" width="20px" height="20px"></SvgIcon>
+              style="
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-start;
+                align-items: flex-start;
+                color: aquamarine;
+              "
+            >
+              增长20%
+              <SvgIcon
+                style="margin-left: 5px"
+                name="up1"
+                color=""
+                width="20px"
+                height="20px"
+              ></SvgIcon>
             </div>
           </div>
         </div>
       </div>
       <div class="cart_1">
         <div class="cart_context1">
-          <div class="cart_context1_top"
-            style="display: flex;flex-flow: row;justify-content: space-around;align-items: center;">
+          <div
+            class="cart_context1_top"
+            style="
+              display: flex;
+              flex-flow: row;
+              justify-content: space-around;
+              align-items: center;
+            "
+          >
             <div class="cart_context1_left">
               <SvgIcon name="dp2" color="" width="80px" height="80px"></SvgIcon>
             </div>
             <div class="cart_context1_right">
-              <div class="text1"
-                style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: flex-start;">
+              <div
+                class="text1"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-content: center;
+                  justify-content: center;
+                  align-items: flex-start;
+                "
+              >
                 <div>
-                  <span class="text1_2" style="color: #FF8524;">328</span>
+                  <span class="text1_2" style="color: #ff8524">328</span>
                 </div>
-                <div style="margin-top: 15px; color: #000;">
-                  今日支付订单数
-                </div>
+                <div style="margin-top: 15px; color: #000">今日支付订单数</div>
               </div>
               <div></div>
             </div>
           </div>
-          <div class="cart_context1_bottom"
-            style="display: flex; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: flex-start;align-items: flex-start;">
-            <div style="margin-right: 10px;">日同比</div>
+          <div
+            class="cart_context1_bottom"
+            style="
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-content: center;
+              justify-content: flex-start;
+              align-items: flex-start;
+            "
+          >
+            <div style="margin-right: 10px">日同比</div>
             <div
-              style=" display: flex; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: flex-start;align-items: flex-start; color: aquamarine;">
-              增长20% <SvgIcon style="margin-left: 5px;" name="up1" color="" width="20px" height="20px"></SvgIcon>
+              style="
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-start;
+                align-items: flex-start;
+                color: aquamarine;
+              "
+            >
+              增长20%
+              <SvgIcon
+                style="margin-left: 5px"
+                name="up1"
+                color=""
+                width="20px"
+                height="20px"
+              ></SvgIcon>
             </div>
           </div>
         </div>
       </div>
       <div class="cart_1">
         <div class="cart_context1">
-          <div class="cart_context1_top"
-            style="display: flex;flex-flow: row;justify-content: space-around;align-items: center;">
+          <div
+            class="cart_context1_top"
+            style="
+              display: flex;
+              flex-flow: row;
+              justify-content: space-around;
+              align-items: center;
+            "
+          >
             <div class="cart_context1_left">
               <SvgIcon name="dp3" color="" width="80px" height="80px"></SvgIcon>
             </div>
             <div class="cart_context1_right">
-              <div class="text1"
-                style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: flex-start;">
+              <div
+                class="text1"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-content: center;
+                  justify-content: center;
+                  align-items: flex-start;
+                "
+              >
                 <div>
-                  <span class="text1_2" style="color:#ED729C ;">50</span>
+                  <span class="text1_2" style="color: #ed729c">50</span>
                 </div>
-                <div style="margin-top: 15px; color: #000;">
-                  今日退票数
-                </div>
+                <div style="margin-top: 15px; color: #000">今日退票数</div>
               </div>
               <div></div>
             </div>
           </div>
-          <div class="cart_context1_bottom"
-            style="display: flex; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: flex-start;align-items: flex-start;">
-            <div style="margin-right: 10px;">日同比</div>
+          <div
+            class="cart_context1_bottom"
+            style="
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-content: center;
+              justify-content: flex-start;
+              align-items: flex-start;
+            "
+          >
+            <div style="margin-right: 10px">日同比</div>
             <div
-              style=" display: flex; flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: flex-start;align-items: flex-start; color: #ed1a60;">
-              增长20% <SvgIcon style="margin-left: 5px;" name="dn1" color="" width="20px" height="20px"></SvgIcon>
+              style="
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-start;
+                align-items: flex-start;
+                color: #ed1a60;
+              "
+            >
+              增长20%
+              <SvgIcon
+                style="margin-left: 5px"
+                name="dn1"
+                color=""
+                width="20px"
+                height="20px"
+              ></SvgIcon>
             </div>
           </div>
         </div>
@@ -147,7 +299,7 @@
 
 <script setup lang="ts">
 import SvgIcon from '@/components/SvgIcon/index.vue'
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const option = ref({
   title: {
@@ -155,35 +307,40 @@ const option = ref({
     left: 'left',
     textStyle: {
       fontWeight: 'normal',
-      color: '#00ABBC'
-    }
+      color: '#00ABBC',
+    },
   },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
       type: 'cross',
       crossStyle: {
-        color: '#999'
-      }
+        color: '#999',
+      },
     },
-
   },
   toolbox: {
-    feature: {
-    }
+    feature: {},
   },
   legend: {
-    data: ['售票量', '销售额']
+    data: ['售票量', '销售额'],
   },
   xAxis: [
     {
       type: 'category',
-      data: ['2022-10-11', '2022-10-12', '2022-10-13', '2022-10-14', '2022-10-15', '2022-10-16', '2022-10-17'],
+      data: [
+        '2022-10-11',
+        '2022-10-12',
+        '2022-10-13',
+        '2022-10-14',
+        '2022-10-15',
+        '2022-10-16',
+        '2022-10-17',
+      ],
       axisPointer: {
-        type: 'shadow'
-      }
-    }
-
+        type: 'shadow',
+      },
+    },
   ],
   yAxis: [
     {
@@ -193,11 +350,11 @@ const option = ref({
       max: 100,
       interval: 20,
       axisLabel: {
-        formatter: '{value}'
+        formatter: '{value}',
       },
       nameTextStyle: {
-        color: '#00ABBC' // 设置yAxis名称字体颜色为青色
-      }
+        color: '#00ABBC', // 设置yAxis名称字体颜色为青色
+      },
     },
     {
       type: 'value',
@@ -206,12 +363,12 @@ const option = ref({
       max: 2000,
       interval: 400,
       axisLabel: {
-        formatter: '{value}'
+        formatter: '{value}',
       },
       nameTextStyle: {
-        color: '#00ABBC' // 设置yAxis名称字体颜色为青色
-      }
-    }
+        color: '#00ABBC', // 设置yAxis名称字体颜色为青色
+      },
+    },
   ],
   series: [
     {
@@ -219,16 +376,14 @@ const option = ref({
       type: 'bar',
       tooltip: {
         valueFormatter: function (value: any) {
-          return value;
-        }
+          return value
+        },
       },
       itemStyle: {
         color: 'pink', // 设置颜色
-        barWidth: 8 // 设置宽度
+        barWidth: 8, // 设置宽度
       },
-      data: [
-        22, 18, 28, 20, 62, 80, 64
-      ]
+      data: [22, 18, 28, 20, 62, 80, 64],
     },
     {
       name: '销售额',
@@ -239,36 +394,36 @@ const option = ref({
       symbolSize: 8, // 设置圆点大小
       tooltip: {
         valueFormatter: function (value: any) {
-          return value;
-        }
+          return value
+        },
       },
       itemStyle: {
-        color: 'lightblue' // 设置颜色为淡蓝色
+        color: 'lightblue', // 设置颜色为淡蓝色
       },
-      data: [500, 700, 650, 720, 1600, 1700, 2000]
-    }
-  ]
+      data: [500, 700, 650, 720, 1600, 1700, 2000],
+    },
+  ],
 })
 const option1 = ref({
   title: {
     text: '热门出发/到达城市排名',
     left: 'left',
     textStyle: {
-      color: '#00ABBC'
-    }
+      color: '#00ABBC',
+    },
   },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
-      type: 'shadow'
-    }
+      type: 'shadow',
+    },
   },
   legend: {},
   grid: {
     left: '3%',
     right: '4%',
     bottom: '3%',
-    containLabel: true
+    containLabel: true,
   },
   xAxis: {
     type: 'value',
@@ -276,20 +431,30 @@ const option1 = ref({
     max: 10000,
     boundaryGap: [0, 0.01],
     nameTextStyle: {
-      color: '#00ABBC' // 设置yAxis名称字体颜色为青色
-    }
+      color: '#00ABBC', // 设置yAxis名称字体颜色为青色
+    },
   },
   yAxis: {
     type: 'category',
-    data: ['哈尔滨', '桂林', '成都', '澳门', '香港', '武汉', "上海", "北京", "深圳", "三亚"],
-
+    data: [
+      '哈尔滨',
+      '桂林',
+      '成都',
+      '澳门',
+      '香港',
+      '武汉',
+      '上海',
+      '北京',
+      '深圳',
+      '三亚',
+    ],
   },
   series: [
     {
       type: 'bar',
-      data: [3000, 3700, 4200, 4800, 5400, 6000, 6800, 7400, 8000, 9500]
-    }
-  ]
+      data: [3000, 3700, 4200, 4800, 5400, 6000, 6800, 7400, 8000, 9500],
+    },
+  ],
 })
 const option2 = ref({
   title: {
@@ -297,45 +462,44 @@ const option2 = ref({
     left: 'center',
     top: '0%',
     textStyle: {
-      color: '#00ABBC'
-    }
+      color: '#00ABBC',
+    },
   },
   tooltip: {
-    trigger: 'item'
+    trigger: 'item',
   },
   legend: {
     top: '10%',
-    left: 'center'
-    
+    left: 'center',
   },
   series: [
     {
-      top:"10%",
+      top: '10%',
       name: 'Access From',
       type: 'pie',
       radius: ['70%', '55%'],
       avoidLabelOverlap: false,
       label: {
         show: false,
-        position: 'center'
+        position: 'center',
       },
       emphasis: {
         label: {
           show: true,
           fontSize: 40,
-          fontWeight: 'bold'
-        }
+          fontWeight: 'bold',
+        },
       },
       labelLine: {
-        show: false
+        show: false,
       },
       data: [
         { value: 1048, name: '已付款' },
         { value: 1099, name: '代付款' },
         { value: 39, name: '已取消' },
-      ]
-    }
-  ]
+      ],
+    },
+  ],
 })
 const option3 = ref({
   title: {
@@ -343,45 +507,44 @@ const option3 = ref({
     left: 'center',
     top: '0%',
     textStyle: {
-      color: '#00ABBC'
-    }
+      color: '#00ABBC',
+    },
   },
   tooltip: {
-    trigger: 'item'
+    trigger: 'item',
   },
   legend: {
     top: '10%',
-    left: 'center'
-    
+    left: 'center',
   },
   series: [
     {
-      top:"10%",
+      top: '10%',
       name: 'Access From',
       type: 'pie',
       radius: ['70%', '55%'],
       avoidLabelOverlap: false,
       label: {
         show: false,
-        position: 'center'
+        position: 'center',
       },
       emphasis: {
         label: {
           show: true,
           fontSize: 40,
-          fontWeight: 'bold'
-        }
+          fontWeight: 'bold',
+        },
       },
       labelLine: {
-        show: false
+        show: false,
       },
       data: [
         { value: 1048, name: '支付宝' },
         { value: 1109, name: '微信' },
         { value: 39, name: '其他' },
-      ]
-    }
-  ]
+      ],
+    },
+  ],
 })
 const option4 = ref({
   title: {
@@ -389,37 +552,36 @@ const option4 = ref({
     left: 'center',
     top: '0%',
     textStyle: {
-      color: '#00ABBC'
-    }
+      color: '#00ABBC',
+    },
   },
   tooltip: {
-    trigger: 'item'
+    trigger: 'item',
   },
   legend: {
     top: '15%',
-    left: 'center'
-    
+    left: 'center',
   },
   series: [
     {
-      top:"25%",
+      top: '25%',
       name: 'Access From',
       type: 'pie',
       radius: ['70%', '55%'],
       avoidLabelOverlap: false,
       label: {
         show: false,
-        position: 'center'
+        position: 'center',
       },
       emphasis: {
         label: {
           show: true,
           fontSize: 40,
-          fontWeight: 'bold'
-        }
+          fontWeight: 'bold',
+        },
       },
       labelLine: {
-        show: false
+        show: false,
       },
       data: [
         { value: 12, name: '三亚' },
@@ -432,9 +594,9 @@ const option4 = ref({
         { value: 55, name: '成都' },
         { value: 61, name: '桂林' },
         { value: 39, name: '哈尔滨' },
-      ]
-    }
-  ]
+      ],
+    },
+  ],
 })
 </script>
 
@@ -468,7 +630,8 @@ const option4 = ref({
           height: 80%;
           border-bottom: 0.0625rem #ccc solid;
 
-          .cart_context1_left {}
+          .cart_context1_left {
+          }
 
           .cart_context1_right {
             color: aquamarine;
@@ -568,4 +731,5 @@ const option4 = ref({
       border-radius: 0.625rem;
     }
   }
-}</style>
+}
+</style>

@@ -43,23 +43,24 @@ export default {
 </script>
 
 <script setup lang="ts">
+import useUserStore from '@/store/modules/user'
+// 引入router-viwe路由组件
+import Main from './main/index.vue'
+// 引入tabber组件
+import Tabber from './tabber/index.vue'
 import { useRoute } from 'vue-router'
 // 引入左侧菜单logo子组件
 import Logo from './logo/index.vue'
 // 引入菜单
 import Menu from './menu/index.vue'
-// 引入用户相关小仓库
-import useUserStore from '@/store/modules/user'
-let userStore = useUserStore()
-// 引入router-viwe路由组件
-import Main from './main/index.vue'
-// 引入路由组件
-let $router = useRoute()
-// 引入tabber组件
-import Tabber from './tabber/index.vue'
 // 引入动画效果 并且 配置仓库
 import useLayOutSettingStore from '@/store/modules/setting'
 let LayoutOutSettingStore = useLayOutSettingStore()
+// 引入用户相关小仓库
+let userStore = useUserStore()
+// 引入路由组件
+let $router = useRoute()
+
 </script>
 
 <style scoped lang="scss">
@@ -105,7 +106,7 @@ let LayoutOutSettingStore = useLayOutSettingStore()
     position: absolute;
     width: calc(100% - $base-menu-width);
     height: calc(100vh - $base-tabber-top);
-    background-color: #ECEDEF;
+    background-color: #ecedef;
     left: $base-menu-width;
     top: $base-tabber-top;
     padding: 10px;

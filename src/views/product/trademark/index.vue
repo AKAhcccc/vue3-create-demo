@@ -1,7 +1,7 @@
 <template>
   <el-card class="box-card">
     <!-- 卡片顶部添加品牌按钮 -->
-    <el-button type="primary" size="default" icon="Plus" @click="AddTrademark">
+    <el-button type="primary" size="default" icon="Plus" @click="AddTrademark" v-has="`btn.Trademark.add`" >
       添加品牌
     </el-button>
     <!-- 表格组件 -->
@@ -34,6 +34,7 @@
             type="primary"
             size="small"
             icon="Edit"
+            v-has="`btn.Trademark.update`"
           ></el-button>
           <el-popconfirm
             :title="`您确定要删除${row.tmName}?`"
@@ -42,7 +43,7 @@
             @confirm="deleteTrademark(row.id)"
           >
             <template #reference>
-              <el-button type="primary" size="small" icon="Delete"></el-button>
+              <el-button type="primary" size="small" icon="Delete" v-has="`btn.Trademark.remove`"></el-button>
             </template>
           </el-popconfirm>
         </template>

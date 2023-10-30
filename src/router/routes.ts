@@ -36,13 +36,23 @@ export const constantRoute = [
       },
     ],
   },
+  // {
+  //   path: '/screen',
+  //   component: () => import('@/views/screen/index.vue'),
+  //   name: 'Screen',
+  //   meta: {
+  //     hidden: false,
+  //     title: '聊天室',
+  //     icon: 'Monitor', 
+  //   },
+  // },
   {
-    path: '/screen',
-    component: () => import('@/views/screen/index.vue'),
-    name: 'Screen',
+    path: '/SocketLogin',
+    component: () => import('@/views/screen/SocketLogin.vue'),
+    name: 'SocketLogin',
     meta: {
+      title: '聊天室登录', //菜单标题
       hidden: false,
-      title: '数据大屏',
       icon: 'Monitor',
     },
   },

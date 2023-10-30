@@ -1,14 +1,60 @@
-import request from "@/utils/request";
+import request from '@/utils/request'
 
 enum API {
-    GETSTOPLIST_URL='http://localhost:8888/api/ticket/stop',
+    // 获取数据并分页
+    GETSTOPLIST_URL = 'http://localhost:8888/api/ticket/stop',
+    // 首字母筛选
+    HANDLESELECT_URL = 'http://localhost:8888/api/ticket/select',
+    // 新增
+    ADDSTOPLIST_URL = 'http://localhost:8888/api/ticket/addStop',
+    // 编辑
+    EDITSTOPLIST_URL = 'http://localhost:8888/api/ticket/editStip',
+    // 删除
+    DELETESTOPLIST_URL = 'http://localhost:8888/api/ticket/delete'
 }
 
-export const getStopList = (obj:any) => {
-    console.log(obj,"data");
-    return request.post<any,any>(API.GETSTOPLIST_URL,{
+// 获取用户信息并分页
+export const getStopList = (obj: any) => {
+    return request.post<any, any>(API.GETSTOPLIST_URL, {
         body: {
-            obj:obj
+            obj,
+        },
+    })
+}
+
+// 获取按钮首字母，并且返回后端进行筛选
+export const getSelect = (str: String) => {
+    return request.post<any, any>(API.HANDLESELECT_URL, {
+        body: {
+            str
+        },
+    })
+}
+
+// 新增接口
+export const addStopList = (str:any) => {
+    return request.post<any, any>(API.ADDSTOPLIST_URL, {
+        body: {
+            str
+        },
+    })
+}
+
+// 编辑接口
+export const EditStopList = (arr:any,obj:any) => {
+    return request.put<any, any>(API.EDITSTOPLIST_URL, {
+        body: {
+            arr,
+            obj
+        },
+    })
+}
+
+// 删除接口
+export const DelectStopList = (id:any) => {
+    return request.delete<any,any>(API.DELETESTOPLIST_URL, {
+        params :{
+            id
         }
     })
 }

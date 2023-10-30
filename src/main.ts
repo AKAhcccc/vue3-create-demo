@@ -25,7 +25,7 @@ import pinia from '@/store'
 import permission from './permission'
 // 实例化getCurrentInstance
 // 挂载ECharts
-const app = createApp(App).component('ECharts',ECharts)
+const app = createApp(App).component('ECharts', ECharts)
 // 安装仓库
 app.use(pinia)
 // 安装自定义插件
@@ -41,5 +41,9 @@ app.use(ElementPlus, {
 })
 // 注册模版路由
 app.use(router)
+// 引入自定义指令文件
+import { isHasButton } from './directive/has';
+
+isHasButton(app)
 
 app.mount('#app')

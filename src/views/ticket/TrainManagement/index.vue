@@ -49,7 +49,7 @@
     </el-form>
   </el-card>
   <!-- 身体表格部分 -->
-  <el-card style="margin-top: 20px;">
+  <el-card style="margin-top: 20px">
     <el-table :data="TicketList" stripe style="width: 100%" height="526" border>
       <el-table-column fixed prop="id" show-overflow-tooltip align="center" label="ID" />
       <el-table-column prop="trips" show-overflow-tooltip align="center" label="车次" />
@@ -66,10 +66,14 @@
       </el-table-column>
       <el-table-column show-overflow-tooltip align="center" width="220" label="操作">
         <template #="{ row }">
-          <el-button type="primary" size="small" icon="Edit" @click="UpDataList(row)">编辑</el-button>
+          <el-button type="primary" size="small" icon="Edit" @click="UpDataList(row)">
+            编辑
+          </el-button>
           <el-popconfirm title="你真的要删除啊？" @confirm="DelectList(row.id)">
             <template #reference>
-              <el-button type="primary" size="small" icon="Delete">删除</el-button>
+              <el-button type="primary" size="small" icon="Delete">
+                删除
+              </el-button>
             </template>
           </el-popconfirm>
         </template>
@@ -81,12 +85,12 @@
       @size-change="handleSizeChange" @current-change="getTicket" />
   </el-card>
   <!-- 新增与修改抽屉 -->
-  <el-drawer style="padding: 10px; background-color: rgb(247, 247, 247);" size="80%" v-model="drawer"
+  <el-drawer style="padding: 10px; background-color: rgb(247, 247, 247)" size="80%" v-model="drawer"
     :direction="direction">
     <template #header>
       <el-card>
         <div class="base_add">
-          <h1>{{ formParams2.id ? '编辑车次' : "新增车次" }}</h1>
+          <h1>{{ formParams2.id ? '编辑车次' : '新增车次' }}</h1>
           <div>
             <el-button @click="Esc">返回</el-button>
             <el-button type="primary" @click="Submit()">提交</el-button>
@@ -149,14 +153,14 @@
           <el-table-column prop="nums" align="center" label="车箱数">
             <template #="{ row }">
               <el-button>-</el-button>
-              <el-input style="width: 60px;" :value="row.nums"></el-input>
+              <el-input style="width: 60px" :value="row.nums"></el-input>
               <el-button>+</el-button>
             </template>
           </el-table-column>
           <el-table-column prop="ps" align="center" label="每车排数">
             <template #="{ row }">
               <el-button>-</el-button>
-              <el-input style="width: 60px;" :value="row.ps"></el-input>
+              <el-input style="width: 60px" :value="row.ps"></el-input>
               <el-button>+</el-button>
             </template>
           </el-table-column>
@@ -164,7 +168,7 @@
           <el-table-column prop="xc" align="center" label="每车限乘人数">
             <template #="{ row }">
               <el-button>-</el-button>
-              <el-input style="width: 60px;" :value="row.xc"></el-input>
+              <el-input style="width: 60px" :value="row.xc"></el-input>
               <el-button>+</el-button>
             </template>
           </el-table-column>
@@ -180,12 +184,20 @@ import tableData from '../../../../data/Data.json'
 import { Search } from '@element-plus/icons-vue'
 import { onMounted, ref, reactive } from 'vue'
 // 获取接口
-import { reqTicket, filterTime, SelectTicket, handleOK, SearchTicket, AddTicket, DelectTiain } from '@/api/ticket/Trips/index'
+import {
+  reqTicket,
+  filterTime,
+  SelectTicket,
+  handleOK,
+  SearchTicket,
+  AddTicket,
+  DelectTiain,
+} from '@/api/ticket/Trips/index'
 // 引入数据类型
 import { TicketResponse } from '@/api/ticket/Trips/type'
-import { ElMessage } from 'element-plus';
+import { ElMessage } from 'element-plus'
 // 存储菜单数据
-let TicketList = ref<TicketResponse>([]);
+let TicketList = ref<TicketResponse>([])
 // 引入仓库
 // import useTicketStore  from '@/store/modules/ticket'
 // let TicketStore = useTicketStore()
@@ -228,7 +240,7 @@ let formParams2 = reactive({
   // 限乘人数
   limit: 646,
   // 无座人数
-  seat: 60
+  seat: 60,
 })
 
 // 页面初始化加载
@@ -258,7 +270,7 @@ const handleSizeChange = () => {
 // 启用按钮回调
 const CheckOK = async () => {
   formParams.type = !formParams.type
-  let result: any = await handleOK(formParams.type);
+  let result: any = await handleOK(formParams.type)
   if (result.code === 200) {
     total.value = result.data.length
     if (total.value < 80) {
@@ -267,14 +279,14 @@ const CheckOK = async () => {
       flag.value = true
     }
     TicketList.value = result.data
-    ElMessage({ type: 'success', message: "状态获取成功" })
+    ElMessage({ type: 'success', message: '状态获取成功' })
   } else {
-    ElMessage({ type: 'error', message: "状态获取失败" })
+    ElMessage({ type: 'error', message: '状态获取失败' })
   }
 }
 // 获取日期区间值
 const handleTime = async () => {
-  let result = await filterTime(formParams.date1, formParams.date2);
+  let result = await filterTime(formParams.date1, formParams.date2)
   if (result.code === 200) {
     total.value = result.data.length
     if (total.value < 80) {
@@ -283,9 +295,9 @@ const handleTime = async () => {
       flag.value = true
     }
     TicketList.value = result.data
-    ElMessage({ type: 'success', message: "依据日期筛选成功" })
+    ElMessage({ type: 'success', message: '依据日期筛选成功' })
   } else {
-    ElMessage({ type: 'error', message: "依据日期筛选失败" })
+    ElMessage({ type: 'error', message: '依据日期筛选失败' })
   }
 }
 
@@ -301,17 +313,17 @@ const SelectTi = async (pager = 1) => {
       flag.value = true
     }
     TicketList.value = result.data
-    ElMessage({ type: 'success', message: "根据类型筛选成功" })
+    ElMessage({ type: 'success', message: '根据类型筛选成功' })
     // getTicket()
   } else {
-    ElMessage({ type: 'error', message: "根据类型筛选失败" })
+    ElMessage({ type: 'error', message: '根据类型筛选失败' })
   }
 }
 
 // 搜索事件回调
 const submit = async () => {
-  let result: any = await SearchTicket(formParams.input);
-  console.log(result, "result");
+  let result: any = await SearchTicket(formParams.input)
+  console.log(result, 'result')
   if (result.code === 200) {
     total.value = result.data.length
     if (total.value < 80) {
@@ -320,10 +332,10 @@ const submit = async () => {
       flag.value = true
     }
     TicketList.value = result.data
-    ElMessage({ type: 'success', message: "搜索成功" })
+    ElMessage({ type: 'success', message: '搜索成功' })
     // getTicket()
   } else {
-    ElMessage({ type: 'success', message: "搜索失败" })
+    ElMessage({ type: 'success', message: '搜索失败' })
   }
 }
 
@@ -337,11 +349,10 @@ const AddOrUpDataTicket = () => {
     nums: 584,
     boxNum: 8,
     limit: 646,
-    seat: 60
+    seat: 60,
   })
   // 清空数据
-  drawer.value = true;
-
+  drawer.value = true
 }
 // 更新数据
 const UpDataList = async (row: any) => {
@@ -356,24 +367,24 @@ const Submit = async () => {
     if (result.code === 200) {
       TicketList.value.find((item) => {
         if (item.id === result.data.id) {
-          item.trips = result.data.trips;
-          item.type = result.data.type;
-          item.conductor = result.data.conductor;
-          item.num = result.data.num;
-          item.max = result.data.max;
-          item.time = result.data.time;
-          item.switch = result.data.switch;
+          item.trips = result.data.trips
+          item.type = result.data.type
+          item.conductor = result.data.conductor
+          item.num = result.data.num
+          item.max = result.data.max
+          item.time = result.data.time
+          item.switch = result.data.switch
         }
       })
-      drawer.value = false;
-      ElMessage({ type: 'success', message: "新增修改成功" })
+      drawer.value = false
+      ElMessage({ type: 'success', message: '新增修改成功' })
     } else {
-      drawer.value = false;
-      ElMessage({ type: 'success', message: "新增修改失败" })
+      drawer.value = false
+      ElMessage({ type: 'success', message: '新增修改失败' })
     }
   } else {
-    let result: any = await AddTicket(formParams2);
-    console.log(result, "result");
+    let result: any = await AddTicket(formParams2)
+    console.log(result, 'result')
     if (result.code === 200) {
       total.value = result.data.length
       if (total.value > 100) {
@@ -382,11 +393,11 @@ const Submit = async () => {
         flag.value = true
       }
       TicketList.value = result.data
-      drawer.value = false;
-      ElMessage({ type: 'success', message: "新增数据成功" })
+      drawer.value = false
+      ElMessage({ type: 'success', message: '新增数据成功' })
     } else {
-      drawer.value = false;
-      ElMessage({ type: 'error', message: "新增数据失败" })
+      drawer.value = false
+      ElMessage({ type: 'error', message: '新增数据失败' })
     }
   }
 }
@@ -402,13 +413,12 @@ const DelectList = async (id: string) => {
       flag.value = true
     }
     TicketList.value = result.data
-    ElMessage({ type: 'success', message: "删除成功" })
+    ElMessage({ type: 'success', message: '删除成功' })
     // getTicket()
   } else {
-    ElMessage({ type: 'success', message: "删除失败" })
+    ElMessage({ type: 'success', message: '删除失败' })
   }
 }
-
 </script>
 
 <style scoped lang="scss">
@@ -426,4 +436,3 @@ const DelectList = async (id: string) => {
   }
 }
 </style>
-@/api/ticket/Trips/index@/api/ticket/Trips/type

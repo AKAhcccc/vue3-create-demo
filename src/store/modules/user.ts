@@ -74,6 +74,7 @@ const useUserStore = defineStore('User', {
 
         this.username = result.data.name
         this.avatar = result.data.avatar
+        this.buttons = result.data.buttons;
         // 计算当前用户需要展示的异步路由
         const userAsyncRoute = filterAsyncRoute(
           cloneDeep(asyncRoute),
@@ -90,7 +91,6 @@ const useUserStore = defineStore('User', {
         ;[...userAsyncRoute, anyRoute].forEach((route: any) => {
           router.addRoute(route)
         })
-        console.log(router.getRoutes(), 'routes')
         return 'ok'
       } else {
         return Promise.reject(new Error(result.message))

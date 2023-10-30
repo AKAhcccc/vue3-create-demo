@@ -30,6 +30,7 @@
     "particles.vue3": "^2.12.0",
     "pinia": "^2.1.6",
     "progress": "^2.0.3",
+    "socket.io-client": "^4.7.2",
     "tsparticles": "^2.12.0",
     "tsparticles-engine": "^2.12.0",
     "vue": "^3.3.4",

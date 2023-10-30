@@ -72,6 +72,7 @@ const goRoute = (vc: any) => {
 }
 </script>
 
+<!-- 递归组件必须有name名字属性值 -->
 <script lang="ts">
 export default {
   name: 'Menu',

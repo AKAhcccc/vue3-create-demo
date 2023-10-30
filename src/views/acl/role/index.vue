@@ -21,7 +21,7 @@
     </el-cart>
     <!-- 身体table展示数据部分 -->
     <el-cart>
-      <el-button type="primary" size="default" icon="Plus" @click="addRole">
+      <el-button type="primary" size="default" icon="Plus" @click="addRole" v-has="`btn.Role.add`">
         添加职位
       </el-button>
       <el-table border style="margin: 10px 0" :data="allRole">
@@ -58,6 +58,7 @@
                 size="small"
                 icon="UserFilled"
                 @click="setPermission(row)"
+                v-has="`btn.Role.assgin`"
               >
                 分配权限
               </el-button>
@@ -66,6 +67,7 @@
                 size="small"
                 icon="Edit"
                 @click="EditRole(row)"
+                v-has="`btn.Role.update`"
               >
                 编辑
               </el-button>
@@ -74,7 +76,7 @@
                 @confirm="DeleteRole(row.id)"
               >
                 <template #reference>
-                  <el-button type="primary" size="small" icon="Delete">
+                  <el-button type="primary" size="small" icon="Delete" v-has="`btn.Role.remove`">
                     删除
                   </el-button>
                 </template>

@@ -16,7 +16,7 @@ enum API {
   // 更新接口
   UPDATALIST_URL = '/ticket/updata',
   // 删除接口
-  DELECTTICKETLIST_URL = '/ticket/delect'
+  DELECTTICKETLIST_URL = '/ticket/delect',
 }
 // 分页接口
 export const reqTicket = (arr1: number, arr2: number) => {
@@ -62,17 +62,17 @@ export const SearchTicket = (inputEmits: string) => {
 }
 
 // 新增内部数据接口
-export const AddTicket = (AddOrUpDataTicketItem:any) => {
-  if(AddOrUpDataTicketItem.id){
+export const AddTicket = (AddOrUpDataTicketItem: any) => {
+  if (AddOrUpDataTicketItem.id) {
     // 如果前端返回ID则是更新接口
-    return request.put<any,any>(API.UPDATALIST_URL,{
+    return request.put<any, any>(API.UPDATALIST_URL, {
       body: {
         data: AddOrUpDataTicketItem,
       },
     })
-  }else {
+  } else {
     // 如果前端未返回ID则是新增接口
-    return request.post<any,any>(API.ADDTICKET_URL,{
+    return request.post<any, any>(API.ADDTICKET_URL, {
       body: {
         data: AddOrUpDataTicketItem,
       },
@@ -81,10 +81,10 @@ export const AddTicket = (AddOrUpDataTicketItem:any) => {
 }
 
 // 删除接口
-export const DelectTiain = (id:string) => {
-  return request.delete(API.DELECTTICKETLIST_URL,{
-    params:{
-      id:id
-    }
+export const DelectTiain = (id: string) => {
+  return request.delete(API.DELECTTICKETLIST_URL, {
+    params: {
+      id: id,
+    },
   })
 }

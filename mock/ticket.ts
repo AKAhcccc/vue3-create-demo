@@ -80,8 +80,8 @@ export default [
       }
       return {
         code: 200,
-        message: "依据日期筛选成功",
-        data: result
+        message: '依据日期筛选成功',
+        data: result,
       }
     },
   },
@@ -90,42 +90,42 @@ export default [
     url: '/api/ticket/handle',
     method: 'post',
     response: ({ body }) => {
-      let { flag } = body.body;
+      let { flag } = body.body
       let data = Ticket
       TicketList = data.filter((item) => item.switch === flag)
       return {
         code: 200,
         data: TicketList,
-        message: "状态获取成功"
+        message: '状态获取成功',
       }
-    }
+    },
   },
   // 搜索接口
   {
     url: '/api/ticket/search',
     method: 'post',
     response: ({ body }) => {
-      let { inputEmits } = body.body;
+      let { inputEmits } = body.body
       let data = Ticket
-      const result = data.filter(item => {
+      const result = data.filter((item) => {
         // 遍历数据源，找到包含关键词的数据项
-        return Object.values(item).some(val => {
-          return String(val).includes(inputEmits);
-        });
-      });
+        return Object.values(item).some((val) => {
+          return String(val).includes(inputEmits)
+        })
+      })
       return {
         code: 200,
         data: result,
-        message: "状态获取成功"
+        message: '状态获取成功',
       }
-    }
+    },
   },
   // 新增接口
   {
     url: '/api/ticket/addlist',
     method: 'post',
     response: ({ body }) => {
-      let { data } = body.body;
+      let { data } = body.body
       let result = Ticket
       result.unshift({
         id: new Date().getTime().toString(),
@@ -135,57 +135,57 @@ export default [
         num: data.nums,
         carriage: data.boxNum,
         max: data.limit,
-        time: "2023/10/26",
-        switch: true
+        time: '2023/10/26',
+        switch: true,
       })
       return {
         code: 200,
-        message: "新增数据成功",
-        data: result
+        message: '新增数据成功',
+        data: result,
       }
-    }
+    },
   },
   {
-    url:"/api/ticket/updata",
+    url: '/api/ticket/updata',
     method: 'put',
-    response:({body}) => {
-      let { data } = body.body;
+    response: ({ body }) => {
+      let { data } = body.body
       let result = Ticket
-      let item = result.find(item => item.id === data.id);
-      if(item){
-        item.trips = data.region1,
-        item.type = data.region,
-        item.conductor = data.region2,
-        item.num = data.nums,
-        item.carriage = data.boxNum,
-        item.max = data.limit,
-        item.time = data.time,
-        item.switch = true
+      let item = result.find((item) => item.id === data.id)
+      if (item) {
+        ;(item.trips = data.region1),
+          (item.type = data.region),
+          (item.conductor = data.region2),
+          (item.num = data.nums),
+          (item.carriage = data.boxNum),
+          (item.max = data.limit),
+          (item.time = data.time),
+          (item.switch = true)
       }
       return {
-        code:200,
-        message:'数据修改成功',
-        data:item
+        code: 200,
+        message: '数据修改成功',
+        data: item,
       }
-    }
+    },
   },
   {
-    url:"/api/ticket/delect",
+    url: '/api/ticket/delect',
     method: 'delete',
-    response:(request) => {
-      console.log(request,"response");
-      let { id } = request.query;
-      let result = Ticket;
-      result.forEach((item,index) => {
-        if(item.id == id){
+    response: (request) => {
+      console.log(request, 'response')
+      let { id } = request.query
+      let result = Ticket
+      result.forEach((item, index) => {
+        if (item.id == id) {
           result.splice(index, 1)
         }
       })
       return {
-        code:200,
-        data:result,
-        message:"删除成功"
+        code: 200,
+        data: result,
+        message: '删除成功',
       }
-    }
-  }
+    },
+  },
 ]

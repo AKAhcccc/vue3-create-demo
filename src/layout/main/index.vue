@@ -2,6 +2,7 @@
   <!-- 路由组件出口的位置 -->
   <router-view v-slot="{ Component }">
     <transition name="fade">
+      <!-- Vue组件提供的component全局组件，可以直接使用 -->
       <component :is="Component" v-if="flag" />
     </transition>
   </router-view>
