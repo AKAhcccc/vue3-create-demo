@@ -6,13 +6,23 @@
         <el-col :span="10">
           <el-form-item label="创建时间">
             <el-col :span="5">
-              <el-date-picker v-model="formParams.date1" type="date" placeholder="开始" style="width: 100%" />
+              <el-date-picker
+                v-model="formParams.date1"
+                type="date"
+                placeholder="开始"
+                style="width: 100%"
+              />
             </el-col>
             <el-col :span="0.1" class="text-center">
               <span class="text-gray-500">至</span>
             </el-col>
             <el-col :span="5">
-              <el-date-picker v-model="formParams.date2" type="date" placeholder="结束" style="width: 100%" />
+              <el-date-picker
+                v-model="formParams.date2"
+                type="date"
+                placeholder="结束"
+                style="width: 100%"
+              />
             </el-col>
             <el-col :span="5">
               <el-button type="primary" size="default" @click="handleTime">
@@ -23,7 +33,11 @@
         </el-col>
         <el-col :span="3">
           <el-form-item label="车次类型">
-            <el-select v-model="formParams.region" style="width: 100px" placeholder="全部">
+            <el-select
+              v-model="formParams.region"
+              style="width: 100px"
+              placeholder="全部"
+            >
               <el-option @click="SelectTi" label="火车" value="火车" />
               <el-option @click="SelectTi" label="高铁" value="高铁" />
             </el-select>
@@ -37,11 +51,21 @@
           </el-form-item>
         </el-col>
         <el-col :span="4">
-          <el-input v-model="formParams.input" class="w-50 m-2" @keyup.enter="submit" placeholder="按下回车搜索 根据车长搜索"
-            :prefix-icon="Search" />
+          <el-input
+            v-model="formParams.input"
+            class="w-50 m-2"
+            @keyup.enter="submit"
+            placeholder="按下回车搜索 根据车长搜索"
+            :prefix-icon="Search"
+          />
         </el-col>
         <el-col :span="5">
-          <el-button @click="AddOrUpDataTicket" type="primary" size="default" icon="Plus">
+          <el-button
+            @click="AddOrUpDataTicket"
+            type="primary"
+            size="default"
+            icon="Plus"
+          >
             新增车次
           </el-button>
         </el-col>
@@ -51,22 +75,78 @@
   <!-- 身体表格部分 -->
   <el-card style="margin-top: 20px">
     <el-table :data="TicketList" stripe style="width: 100%" height="526" border>
-      <el-table-column fixed prop="id" show-overflow-tooltip align="center" label="ID" />
-      <el-table-column prop="trips" show-overflow-tooltip align="center" label="车次" />
-      <el-table-column prop="type" show-overflow-tooltip align="center" label="类型" />
-      <el-table-column prop="conductor" show-overflow-tooltip align="center" label="车长" />
-      <el-table-column prop="num" show-overflow-tooltip align="center" label="总座位数" />
-      <el-table-column prop="carriage" show-overflow-tooltip align="center" label="车厢数量" />
-      <el-table-column prop="max" show-overflow-tooltip align="center" label="限乘人数" />
-      <el-table-column prop="time" show-overflow-tooltip align="center" label="创建时间" />
-      <el-table-column prop="switch" show-overflow-tooltip align="center" label="状态">
+      <el-table-column
+        fixed
+        prop="id"
+        show-overflow-tooltip
+        align="center"
+        label="ID"
+      />
+      <el-table-column
+        prop="trips"
+        show-overflow-tooltip
+        align="center"
+        label="车次"
+      />
+      <el-table-column
+        prop="type"
+        show-overflow-tooltip
+        align="center"
+        label="类型"
+      />
+      <el-table-column
+        prop="conductor"
+        show-overflow-tooltip
+        align="center"
+        label="车长"
+      />
+      <el-table-column
+        prop="num"
+        show-overflow-tooltip
+        align="center"
+        label="总座位数"
+      />
+      <el-table-column
+        prop="carriage"
+        show-overflow-tooltip
+        align="center"
+        label="车厢数量"
+      />
+      <el-table-column
+        prop="max"
+        show-overflow-tooltip
+        align="center"
+        label="限乘人数"
+      />
+      <el-table-column
+        prop="time"
+        show-overflow-tooltip
+        align="center"
+        label="创建时间"
+      />
+      <el-table-column
+        prop="switch"
+        show-overflow-tooltip
+        align="center"
+        label="状态"
+      >
         <template #="{ row }">
           <el-switch v-model="row.switch" />
         </template>
       </el-table-column>
-      <el-table-column show-overflow-tooltip align="center" width="220" label="操作">
+      <el-table-column
+        show-overflow-tooltip
+        align="center"
+        width="220"
+        label="操作"
+      >
         <template #="{ row }">
-          <el-button type="primary" size="small" icon="Edit" @click="UpDataList(row)">
+          <el-button
+            type="primary"
+            size="small"
+            icon="Edit"
+            @click="UpDataList(row)"
+          >
             编辑
           </el-button>
           <el-popconfirm title="你真的要删除啊？" @confirm="DelectList(row.id)">
@@ -80,13 +160,25 @@
       </el-table-column>
     </el-table>
     <!-- 分页器 -->
-    <el-pagination v-show="flag" v-model:current-page="pageNo" v-model:page-size="pageSize" :page-sizes="[10, 7, 3]"
-      :background="true" layout="total, sizes ,->, prev, pager, next, jumper" :total="total"
-      @size-change="handleSizeChange" @current-change="getTicket" />
+    <el-pagination
+      v-show="flag"
+      v-model:current-page="pageNo"
+      v-model:page-size="pageSize"
+      :page-sizes="[10, 7, 3]"
+      :background="true"
+      layout="total, sizes ,->, prev, pager, next, jumper"
+      :total="total"
+      @size-change="handleSizeChange"
+      @current-change="getTicket"
+    />
   </el-card>
   <!-- 新增与修改抽屉 -->
-  <el-drawer style="padding: 10px; background-color: rgb(247, 247, 247)" size="80%" v-model="drawer"
-    :direction="direction">
+  <el-drawer
+    style="padding: 10px; background-color: rgb(247, 247, 247)"
+    size="80%"
+    v-model="drawer"
+    :direction="direction"
+  >
     <template #header>
       <el-card>
         <div class="base_add">
@@ -113,7 +205,10 @@
             </el-col>
             <el-col :span="5">
               <el-form-item label="车次">
-                <el-select v-model="formParams2.region1" placeholder="请输入车次">
+                <el-select
+                  v-model="formParams2.region1"
+                  placeholder="请输入车次"
+                >
                   <el-option label="FZK90" value="FZK90" />
                   <el-option label="JPK67" value="JPK67" />
                   <el-option label="QZA66" value="QZA66" />
@@ -122,7 +217,10 @@
             </el-col>
             <el-col :span="5">
               <el-form-item label="车长">
-                <el-select v-model="formParams2.region2" placeholder="请输入姓名">
+                <el-select
+                  v-model="formParams2.region2"
+                  placeholder="请输入姓名"
+                >
                   <el-option label="张三" value="张三" />
                   <el-option label="李四" value="李四" />
                   <el-option label="王五" value="王五" />

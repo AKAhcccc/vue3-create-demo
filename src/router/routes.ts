@@ -43,7 +43,7 @@ export const constantRoute = [
   //   meta: {
   //     hidden: false,
   //     title: '聊天室',
-  //     icon: 'Monitor', 
+  //     icon: 'Monitor',
   //   },
   // },
   {

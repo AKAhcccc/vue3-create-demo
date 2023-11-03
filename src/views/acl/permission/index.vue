@@ -36,7 +36,13 @@
               @confirm="remove(row.id)"
             >
               <template #reference>
-                <el-button type="primary" size="small" v-has="`btn.Role.remove`">删除</el-button>
+                <el-button
+                  type="primary"
+                  size="small"
+                  v-has="`btn.Role.remove`"
+                >
+                  删除
+                </el-button>
               </template>
             </el-popconfirm>
           </div>

@@ -13,16 +13,14 @@ const logger = require('koa-logger')
 // new出app实例
 const app = new Koa()
 
-
-
-
-
 app.use(logger())
 app.use(error())
 app.use(koaBody({ multipart: true }))
 app.use(bodyParser())
 app.use(cors())
 app.use(require('./router/stop').routes())
+app.use(require('./router/line').routes())
+app.use(require('./router/ticket').routes())
 app.listen(8888, (err) => {
   console.log('Server is running on port 8888')
 })

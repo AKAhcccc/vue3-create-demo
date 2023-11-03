@@ -16,7 +16,7 @@ import { constantRoute, asyncRoute, anyRoute } from '@/router/routes'
 // 引入项目中的路由文件
 import router from '@/router'
 // 引入深拷贝方法
-// @ts-expect-error
+// @ts-expect-error This type is incorrect because <reason for ignoring the error>
 import cloneDeep from 'lodash/cloneDeep'
 
 // 用于过滤当前用户需要展示的异步路由
@@ -74,7 +74,7 @@ const useUserStore = defineStore('User', {
 
         this.username = result.data.name
         this.avatar = result.data.avatar
-        this.buttons = result.data.buttons;
+        this.buttons = result.data.buttons
         // 计算当前用户需要展示的异步路由
         const userAsyncRoute = filterAsyncRoute(
           cloneDeep(asyncRoute),

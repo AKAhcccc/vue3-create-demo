@@ -20,7 +20,7 @@ router.beforeEach(async (to: any, from: any, next: any) => {
   // to:将要访问那个路由 是个路由对象
   // from从那个路由而来
   // next:路由的放行函数
-  console.log(from);
+  console.log(from)
   NProgress.start()
   // 获取token 判断用户是否登录
   const token = userStore.token

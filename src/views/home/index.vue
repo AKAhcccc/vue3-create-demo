@@ -298,7 +298,6 @@
 </template>
 
 <script setup lang="ts">
-import SvgIcon from '@/components/SvgIcon/index.vue'
 import { ref } from 'vue'
 
 const option = ref({

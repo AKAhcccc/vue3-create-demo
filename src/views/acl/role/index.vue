@@ -21,7 +21,13 @@
     </el-cart>
     <!-- 身体table展示数据部分 -->
     <el-cart>
-      <el-button type="primary" size="default" icon="Plus" @click="addRole" v-has="`btn.Role.add`">
+      <el-button
+        type="primary"
+        size="default"
+        icon="Plus"
+        @click="addRole"
+        v-has="`btn.Role.add`"
+      >
         添加职位
       </el-button>
       <el-table border style="margin: 10px 0" :data="allRole">
@@ -76,7 +82,12 @@
                 @confirm="DeleteRole(row.id)"
               >
                 <template #reference>
-                  <el-button type="primary" size="small" icon="Delete" v-has="`btn.Role.remove`">
+                  <el-button
+                    type="primary"
+                    size="small"
+                    icon="Delete"
+                    v-has="`btn.Role.remove`"
+                  >
                     删除
                   </el-button>
                 </template>

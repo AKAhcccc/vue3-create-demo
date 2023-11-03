@@ -60,7 +60,6 @@ let LayoutOutSettingStore = useLayOutSettingStore()
 let userStore = useUserStore()
 // 引入路由组件
 let $router = useRoute()
-
 </script>
 
 <style scoped lang="scss">

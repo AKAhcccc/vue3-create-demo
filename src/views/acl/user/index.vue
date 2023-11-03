@@ -18,7 +18,12 @@
     </el-form>
   </el-card>
   <el-card>
-    <el-button type="primary" size="default" @click="addUser" v-has="`btn.User.add`">
+    <el-button
+      type="primary"
+      size="default"
+      @click="addUser"
+      v-has="`btn.User.add`"
+    >
       添加用户
     </el-button>
     <el-button
@@ -100,7 +105,12 @@
             @confirm="deleteUser(row.id)"
           >
             <template #reference>
-              <el-button type="primary" size="small" icon="DeleteFilled" v-has="`btn.User.remove`">
+              <el-button
+                type="primary"
+                size="small"
+                icon="DeleteFilled"
+                v-has="`btn.User.remove`"
+              >
                 删除
               </el-button>
             </template>

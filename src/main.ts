@@ -15,7 +15,8 @@ import globalComponent from '@/components/index'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // 配置国际化,因内置无TS声明文件，单行忽略
-//@ts-expect-error
+// 可配置@ts-expect-error或@ts-ignore皆可实现
+//@ts-expect-error This type is incorrect because <reason for ignoring the error>
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 // 引入路由
 import router from './router'
@@ -42,7 +43,7 @@ app.use(ElementPlus, {
 // 注册模版路由
 app.use(router)
 // 引入自定义指令文件
-import { isHasButton } from './directive/has';
+import { isHasButton } from './directive/has'
 
 isHasButton(app)
 

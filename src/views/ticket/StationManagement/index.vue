@@ -43,8 +43,13 @@
           </el-form-item>
           <el-form-item label="">
             <el-col :span="18">
-              <el-input v-model="formParams.input" class="w-50 m-2" @keyup.enter="Searchs" placeholder="按下回车搜索 根据城市名搜索"
-                :prefix-icon="Search" />
+              <el-input
+                v-model="formParams.input"
+                class="w-50 m-2"
+                @keyup.enter="Searchs"
+                placeholder="按下回车搜索 根据城市名搜索"
+                :prefix-icon="Search"
+              />
             </el-col>
           </el-form-item>
           <el-col :span="2">
@@ -62,39 +67,62 @@
       <el-table-column prop="id" label="ID" />
       <el-table-column prop="city" label="City" />
       <el-table-column prop="state" label="State">
-        <template #="{ }">
+        <template #="{}">
           <el-switch v-model="state" />
         </template>
       </el-table-column>
       <el-table-column label="Address">
         <template #="{ row }">
-          <el-button type="primary" size="small" icon="Edit" @click="EditStop(row)">编辑</el-button>
+          <el-button
+            type="primary"
+            size="small"
+            icon="Edit"
+            @click="EditStop(row)"
+          >
+            编辑
+          </el-button>
           <el-popconfirm title="确定删除吗？" @confirm="DelectList(row.id)">
             <template #reference>
-              <el-button type="primary" size="small" icon="Delete">删除</el-button>
+              <el-button type="primary" size="small" icon="Delete">
+                删除
+              </el-button>
             </template>
           </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>
     <!-- 分页器 -->
-    <el-pagination v-show="flag" v-model:current-page="pageNo" v-model:page-size="pageSize" :page-sizes="[5, 7, 10, 12]"
-      :background="true" layout="total, sizes ,->, prev, pager, next, jumper" :total="total"
-      @size-change="handleSizeChange" @current-change="handleCurrentChange" />
+    <el-pagination
+      v-show="flag"
+      v-model:current-page="pageNo"
+      v-model:page-size="pageSize"
+      :page-sizes="[5, 7, 10, 12]"
+      :background="true"
+      layout="total, sizes ,->, prev, pager, next, jumper"
+      :total="total"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+    />
   </el-card>
   <!-- 对话框 -->
-  <el-dialog v-model="dialogVisible" :title="formParams.id ? '编辑车站' : '新增车站'" height="40%" width="30%">
+  <el-dialog
+    v-model="dialogVisible"
+    :title="formParams.id ? '编辑车站' : '新增车站'"
+    height="40%"
+    width="30%"
+  >
     <el-form :model="StopParams">
       <el-form-item label="车站">
-        <el-input v-model="StopParams.addData" placeholder="请输入车站名称"></el-input>
+        <el-input
+          v-model="StopParams.addData"
+          placeholder="请输入车站名称"
+        ></el-input>
       </el-form-item>
     </el-form>
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="Submit">
-          提交
-        </el-button>
+        <el-button type="primary" @click="Submit">提交</el-button>
       </span>
     </template>
   </el-dialog>
@@ -102,9 +130,15 @@
 
 <script setup lang="ts">
 import { onMounted, ref, reactive } from 'vue'
-import { getStopList, getSelect, addStopList, EditStopList,DelectStopList } from '@/api/ticket/Stop/index'
+import {
+  getStopList,
+  getSelect,
+  addStopList,
+  EditStopList,
+  DelectStopList,
+} from '@/api/ticket/Stop/index'
 import { Search } from '@element-plus/icons-vue'
-import { ElMessage } from 'element-plus';
+import { ElMessage } from 'element-plus'
 // 收集表单数据
 let formParams = reactive({
   id: 0,
@@ -113,7 +147,7 @@ let formParams = reactive({
 })
 // 获取新增数据
 let StopParams = reactive({
-  addData: ''
+  addData: '',
 })
 
 // 起始页码
@@ -142,11 +176,11 @@ const getStopItem = async () => {
   let obj = {
     pageNo: pageNo.value,
     pageSize: pageSize.value,
-    keyword: 0
+    keyword: 0,
   }
   await getStopList(obj).then((result) => {
     if (result.code === 200) {
-      StopList.value = result.data.goods;
+      StopList.value = result.data.goods
       total.value = result.data.total
     } else {
     }
@@ -164,20 +198,20 @@ const handleCurrentChange = () => {
 
 // 根据首字母筛选数据
 const handleSelect = async () => {
-  console.log(formParams.region, "handleSelect");
-  await getSelect(formParams.region).then(result => {
+  console.log(formParams.region, 'handleSelect')
+  await getSelect(formParams.region).then((result) => {
     if (result.code === 200) {
-      console.log(result, "result");
-      StopList.value = result.data;
+      console.log(result, 'result')
+      StopList.value = result.data
       total.value = result.data.length
       if (total.value < 80) {
         flag.value = false
       } else {
         flag.value = true
       }
-      ElMessage({ type: "success", message: "筛选成功" })
+      ElMessage({ type: 'success', message: '筛选成功' })
     } else {
-      ElMessage({ type: "error", message: "筛选失败" })
+      ElMessage({ type: 'error', message: '筛选失败' })
     }
   })
 }
@@ -200,20 +234,20 @@ const addStop = async () => {
 // 提交按钮
 const Submit = async () => {
   if (formParams.id) {
-    await EditStopList(formParams, StopParams.addData).then(result => {
+    await EditStopList(formParams, StopParams.addData).then((result) => {
       if (result.code === 200) {
-        ElMessage({ type: "success", message: "数据新增成功" })
+        ElMessage({ type: 'success', message: '数据新增成功' })
         LayOutSetting.refsh = !LayOutSetting.refsh
       } else {
-        ElMessage({ type: "error", message: "数据新增成功" })
+        ElMessage({ type: 'error', message: '数据新增成功' })
       }
     })
   } else {
-    await addStopList(StopParams).then(result => {
+    await addStopList(StopParams).then((result) => {
       if (result.code === 200) {
-        ElMessage({ type: "success", message: "数据新增成功" })
+        ElMessage({ type: 'success', message: '数据新增成功' })
       } else {
-        ElMessage({ type: "error", message: "数据新增成功" })
+        ElMessage({ type: 'error', message: '数据新增成功' })
       }
     })
   }
@@ -225,20 +259,20 @@ const Searchs = async () => {
   let obj = {
     pageNo: pageNo.value,
     pageSize: pageSize.value,
-    keyword: formParams.input
+    keyword: formParams.input,
   }
-  await getStopList(obj).then(result => {
+  await getStopList(obj).then((result) => {
     if (result.code === 200) {
-      StopList.value = result.data.goods;
+      StopList.value = result.data.goods
       total.value = result.data.total
       if (total.value < 80) {
         flag.value = false
       } else {
         flag.value = true
       }
-      ElMessage({ type: "success", message: "查询成功" })
+      ElMessage({ type: 'success', message: '查询成功' })
     } else {
-      ElMessage({ type: "error", message: "查询失败" })
+      ElMessage({ type: 'error', message: '查询失败' })
     }
   })
 }
@@ -250,16 +284,15 @@ const EditStop = async (row: any) => {
 }
 
 // 删除功能
-const DelectList = async (id:number) => {
-  console.log(id,"id");
-  await DelectStopList(id).then(result => {
+const DelectList = async (id: number) => {
+  console.log(id, 'id')
+  await DelectStopList(id).then((result) => {
     if (result.code === 200) {
-        ElMessage({ type: "success", message: "删除成功" })
-        LayOutSetting.refsh = !LayOutSetting.refsh
-      } else {
-        ElMessage({ type: "error", message: "删除成功" })
-      }
-    
+      ElMessage({ type: 'success', message: '删除成功' })
+      LayOutSetting.refsh = !LayOutSetting.refsh
+    } else {
+      ElMessage({ type: 'error', message: '删除成功' })
+    }
   })
 }
 </script>

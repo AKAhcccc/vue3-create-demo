@@ -3,7 +3,7 @@ const connection = mysql.createConnection({
   host: 'localhost', // 连接的数据库服务器
   port: '3306', // 端口号
   user: 'root', // 用户名
-  password: 'root', // 密码
+  password: '123456789', // 密码
   database: 'ticket', // 数据库名
 })
 
