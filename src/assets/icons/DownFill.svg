@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Arrow/Down Fill</title>
+    <g id="票务平台-管理端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="视觉规范" transform="translate(-763.000000, -537.000000)">
+            <g id="Icons/Arrow/Down-Fill" transform="translate(763.000000, 537.000000)">
+                <g transform="translate(0.000000, 0.000000)" id="Icons/Arrow-Down-Fill">
+                    <rect id="矩形" stroke-opacity="0" stroke="#FFFFFF" x="0.5" y="0.5" width="23" height="23"></rect>
+                    <path d="M12.7171954,14.9400791 L16.7452071,10.5945531 C17.3120018,9.98297714 16.8717691,9 16.028706,9 L7.97092473,9 C7.12971706,9 6.68762893,9.98297714 7.2544236,10.5945531 L11.2841931,14.9383497 C11.6692502,15.3535948 12.3322359,15.3535948 12.7171954,14.9400791 Z" id="路径" fill="#1BA9BA"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

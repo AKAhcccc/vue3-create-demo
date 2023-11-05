@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/始</title>
+    <g id="票务平台-管理端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="视觉规范" transform="translate(-771.000000, -733.000000)">
+            <g id="Icons/始" transform="translate(771.000000, 733.000000)">
+                <rect id="矩形" fill="#94BAFB" x="0" y="0" width="14" height="14" rx="2"></rect>
+                <text id="始" font-family="SourceHanSansCN-Medium, Source Han Sans CN" font-size="10" font-weight="400" line-spacing="10" fill="#FFFFFF">
+                    <tspan x="2" y="10">始</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

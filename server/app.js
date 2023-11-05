@@ -21,6 +21,7 @@ app.use(cors())
 app.use(require('./router/stop').routes())
 app.use(require('./router/line').routes())
 app.use(require('./router/ticket').routes())
+app.use(require('./router/order').routes())
 app.listen(8888, (err) => {
   console.log('Server is running on port 8888')
 })
