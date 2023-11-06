@@ -9,7 +9,7 @@ export const isHasButton = (app: any) => {
     mounted(el: any, options: any) {
       // el是全局自定义指令的DOM元素
       console.log(el, 'el')
-      // el是全局自定义指令右侧的数值
+      // options是全局自定义指令右侧的数值
       console.log(options, 'options')
 
       console.log(userStore.buttons, 'buttons')

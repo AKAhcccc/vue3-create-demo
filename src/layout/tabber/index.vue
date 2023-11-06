@@ -23,7 +23,6 @@ export default {
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
-  background-color: #fff;
   .tabber_left {
     display: flex;
     align-content: center;

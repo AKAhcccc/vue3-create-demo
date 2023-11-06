@@ -90,7 +90,6 @@ let $router = useRoute()
   .layout_tabbar {
     width: calc(100% - $base-menu-width);
     height: $base-tabber-top;
-    background-color: cyan;
     position: fixed;
     top: 0;
     left: $base-menu-width;
@@ -105,7 +104,7 @@ let $router = useRoute()
     position: absolute;
     width: calc(100% - $base-menu-width);
     height: calc(100vh - $base-tabber-top);
-    background-color: #ecedef;
+    // background-color: #ecedef;
     left: $base-menu-width;
     top: $base-tabber-top;
     padding: 10px;

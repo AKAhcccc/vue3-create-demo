@@ -674,7 +674,7 @@
     </div>
     <!-- 新增与修改抽屉 -->
     <el-drawer
-      style="padding: 10px; background-color: rgb(247, 247, 247)"
+      style="padding: 10px;"
       size="80%"
       v-model="drawer"
       :direction="direction"
@@ -1121,7 +1121,6 @@ const Submit = async () => {
   .tables {
     width: 100%;
     height: 84%;
-    background-color: #fff;
 
     header {
       display: flex;

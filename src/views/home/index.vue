@@ -618,6 +618,7 @@ const option4 = ref({
       border-radius: 0.625rem;
       margin-right: 0.75rem;
       padding: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
+      border:1px #ccc solid ;
 
       .cart_context1 {
         width: 100%;
@@ -650,30 +651,6 @@ const option4 = ref({
         }
       }
     }
-
-    // .cart_2 {
-    //   width: 25%;
-    //   height: 100%;
-    //   background-color: rgb(255, 255, 255);
-    //   border-radius: 0.625rem;
-    //   margin-right: 0.75rem;
-    // }
-
-    // .cart_3 {
-    //   width: 25%;
-    //   height: 100%;
-    //   background-color: rgb(255, 255, 255);
-    //   border-radius: 0.625rem;
-    //   margin-right: 0.75rem;
-    // }
-
-    // .cart_4 {
-    //   width: 25%;
-    //   height: 100%;
-    //   background-color: rgb(255, 255, 255);
-    //   border-radius: 0.625rem;
-    //   margin-right: 0.75rem;
-    // }
   }
 
   .container_main {

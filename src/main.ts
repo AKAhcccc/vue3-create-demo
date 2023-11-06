@@ -40,6 +40,8 @@ app.use(Particles)
 app.use(ElementPlus, {
   locale: zhCn, //国际化配置
 })
+// 暗黑模式样式
+import 'element-plus/theme-chalk/dark/css-vars.css'
 // 注册模版路由
 app.use(router)
 // 引入自定义指令文件

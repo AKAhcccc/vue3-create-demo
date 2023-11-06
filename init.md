@@ -23,12 +23,12 @@ npx eslint --init
 ```
 module.exports = {
    //运行环境
-    "env": { 
+    "env": {
         "browser": true,//浏览器端
         "es2021": true,//es2021
     },
     //规则继承
-    "extends": [ 
+    "extends": [
        //全部规则默认是关闭的,这个配置项开启推荐规则,推荐规则参照文档
        //比如:函数不能重名、对象不能出现重复key
         "eslint:recommended",
@@ -416,7 +416,7 @@ module.exports = {
 配置husky
 
 ```
- 
+
 ```
 
 在生成的commit-msg文件中添加下面的命令

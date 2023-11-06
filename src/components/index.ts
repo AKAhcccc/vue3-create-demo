@@ -1,9 +1,10 @@
 // 从项目中引入全局组件
 import SvgIcon from './SvgIcon/index.vue'
+import valicode from './valicode/valicode.vue'
 // 注册全局Icon图标
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
-const allGlobalComponent = { SvgIcon }
+const allGlobalComponent = { SvgIcon,valicode }
 
 //对外暴漏插件对象
 export default {

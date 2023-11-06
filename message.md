@@ -15,8 +15,8 @@
 **slot:**插槽(默认插槽、具名插槽、作用域插槽)实现父子组件通信........
 
 ### 1.1props
-props可以实现父子组件通信,在vue3中我们可以通过defineProps获取父组件传递的数据。且在组件内部不需要引入defineProps方法可以直接使用！
 
+props可以实现父子组件通信,在vue3中我们可以通过defineProps获取父组件传递的数据。且在组件内部不需要引入defineProps方法可以直接使用！
 
 **子组件获取父组件传递数据:方式1**
 
@@ -46,7 +46,6 @@ let props = defineProps(["info",'money']);
 
 原生DOM事件可以让用户与网页进行交互，比如click、dbclick、change、mouseenter、mouseleave....
 
-
 #### 1.2.1原生DOM事件
 
 代码如下:
@@ -56,7 +55,6 @@ let props = defineProps(["info",'money']);
       我是祖国的老花骨朵
  </pre>
 ```
-
 
 当前代码级给pre标签绑定原生DOM事件点击事件,默认会给事件回调注入event事件对象。当然点击事件想注入多个参数可以按照下图操作。但是切记注入的事件对象务必叫做$event.
 
@@ -114,7 +112,6 @@ const handler = () => {
 let $emit = defineEmits(["xxx",'click']);
 ```
 
-
 ### 1.3全局事件总线
 
 全局事件总线可以实现任意组件通信，在vue2中可以根据VM与VC关系推出全局事件总线。
@@ -124,7 +121,6 @@ let $emit = defineEmits(["xxx",'click']);
 那么在Vue3想实现全局事件的总线功能就有点不现实啦，如果想在Vue3中使用全局事件总线功能
 
 可以使用插件mitt实现。
-
 
 ### 1.4v-model
 
@@ -142,7 +138,7 @@ v-model指令可是收集表单数据(数据双向绑定)，除此之外它也�
 
 在vue3中一个组件可以通过使用多个v-model,让父子组件多个数据同步,下方代码相当于给组件Child传递两个props分别是pageNo与pageSize，以及绑定两个自定义事件update:pageNo与update:pageSize实现父子数据同步
 
-```
+````
 <Child v-model:pageNo="msg" v-model:pageSize="msg1"></Child>
 
 
@@ -155,7 +151,7 @@ v-model指令可是收集表单数据(数据双向绑定)，除此之外它也�
 比如:在父组件内部使用一个子组件my-button
 
 ```<my-button type="success" size="small" title='标题' @click="handler"></my-button>
-```
+````
 
 子组件内部可以通过useAttrs方法获取组件属性与事件.因此你也发现了，它类似于props,可以接受父组件传递过来的属性与属性值。需要注意如果defineProps接受了某一个属性，useAttrs方法返回的对象身上就没有相应属性与属性值。
 
@@ -165,8 +161,6 @@ import {useAttrs} from 'vue';
 let $attrs = useAttrs();
 </script>
 ```
-
-
 
 ### 1.6ref与$parent
 
@@ -215,7 +209,6 @@ $parent可以获取某一个组件的父组件实例VC,因此可以使用父组�
 <button @click="handler($parent)">点击我获取父组件实例</button>
 ```
 
-
 ```
 
 ### 1.7provide与inject
@@ -246,16 +239,13 @@ pinia也是集中式管理状态容器,类似于vuex。但是核心概念没有m
 
 在子组件内部的模板中书写slot全局组件标签
 
-
 在父组件内部提供结构：Todo即为子组件,在父组件内部使用的时候，在双标签内部书写结构传递给子组件
 
 注意开发项目的时候默认插槽一般只有一个
 
-
 **具名插槽：**
 
 顾名思义，此插槽带有名字在组件内部留多个指定名字的插槽。
-
 
 **作用域插槽**
 

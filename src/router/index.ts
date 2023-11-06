@@ -9,9 +9,12 @@ import { constantRoute } from './routes'
  */
 const router = createRouter({
   // 模式的设置hash
+  // 在创建路由器时，使用createWebHashHistory()函数来设置路由模式为哈希模式，即URL中使用#来表示路由。
   history: createWebHashHistory(),
   routes: constantRoute,
   // 滚动行为
+  // 定义了一个scrollBehavior函数来设置路由切换时的滚动行为。
+  // 在这个例子中，每次路由切换后，页面滚动位置会被重置到最顶部。
   scrollBehavior() {
     return {
       left: 0,

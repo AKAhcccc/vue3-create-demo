@@ -76,7 +76,6 @@
         style="
           width: 100%;
           height: 3.125rem;
-          background-color: #d7dbe2;
           border-radius: 0.625rem;
         "
       >
@@ -607,7 +606,6 @@ const Submit = async () => {
   .tables {
     width: 100%;
     height: 84%;
-    background-color: #fff;
 
     header {
       display: flex;
