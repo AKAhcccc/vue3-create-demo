@@ -674,7 +674,7 @@
     </div>
     <!-- 新增与修改抽屉 -->
     <el-drawer
-      style="padding: 10px;"
+      style="padding: 10px"
       size="80%"
       v-model="drawer"
       :direction="direction"

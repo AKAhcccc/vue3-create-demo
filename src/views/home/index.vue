@@ -618,7 +618,7 @@ const option4 = ref({
       border-radius: 0.625rem;
       margin-right: 0.75rem;
       padding: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
-      border:1px #ccc solid ;
+      border: 1px #ccc solid;
 
       .cart_context1 {
         width: 100%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="captcha" style="display: flex;">
+  <div class="captcha" style="display: flex">
     <canvas ref="canvas" width="100" height="40"></canvas>
   </div>
   <div class="valicode-btn">

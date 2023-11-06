@@ -1,31 +1,60 @@
 <template>
   <div id="login">
-    <Particles id="tsparticles" :particlesInit="particlesInit" :particlesLoaded="particlesLoaded" :options="options" />
+    <Particles
+      id="tsparticles"
+      :particlesInit="particlesInit"
+      :particlesLoaded="particlesLoaded"
+      :options="options"
+    />
     <div class="login_box">
       <el-row>
         <el-col :span="12" :xs="0"></el-col>
         <el-col :span="12" :xs="24">
-          <el-form class="login_form" :model="loginForm" :rules="rules" ref="logins">
+          <el-form
+            class="login_form"
+            :model="loginForm"
+            :rules="rules"
+            ref="logins"
+          >
             <h1>百步穿杨一发脑洞大开</h1>
             <h2>天女散花两枪心胸宽广</h2>
             <el-form-item prop="username">
-              <el-input style="background-color: transparent;" :prefix-icon="User" v-model="loginForm.username" placeholder="admin或者system"></el-input>
+              <el-input
+                style="background-color: transparent"
+                :prefix-icon="User"
+                v-model="loginForm.username"
+                placeholder="admin或者system"
+              ></el-input>
             </el-form-item>
             <el-form-item prop="password">
-              <el-input style="background-color: transparent;" :prefix-icon="Lock" v-model="loginForm.password" placeholder="atguigu123" show-password
-                type="password"></el-input>
+              <el-input
+                style="background-color: transparent"
+                :prefix-icon="Lock"
+                v-model="loginForm.password"
+                placeholder="atguigu123"
+                show-password
+                type="password"
+              ></el-input>
             </el-form-item>
             <div class="validate-code">
               <div style="display: flex">
                 <el-form-item label="验证码：" prop="valicode">
-                  <el-input style="background-color: transparent;" v-model="loginForm.valicode" />
-
+                  <el-input
+                    style="background-color: transparent"
+                    v-model="loginForm.valicode"
+                  />
                 </el-form-item>
                 <valicode ref="refresh" @getCode="getCode" width="150px" />
               </div>
             </div>
             <el-form-item>
-              <el-button :loading="loading" class="login_button" type="primary" size="default" @click="login">
+              <el-button
+                :loading="loading"
+                class="login_button"
+                type="primary"
+                size="default"
+                @click="login"
+              >
                 登录
               </el-button>
             </el-form-item>
@@ -143,11 +172,15 @@ let $route = useRoute()
 const code = ref('')
 const getCode = (value: any) => {
   code.value = value
-  console.log(value);
+  console.log(value)
 }
 
 // 收集表单信息，用户名密码,reactive是响应式代理对象或数组
-let loginForm = reactive({ username: 'admin', password: 'atguigu123', valicode: '' })
+let loginForm = reactive({
+  username: 'admin',
+  password: 'atguigu123',
+  valicode: '',
+})
 let useStore = useUserStore()
 
 // 设置点击登录事件绑定
@@ -205,8 +238,8 @@ const validatorPasswords = (rule: any, value: any, callback: any) => {
   }
 }
 // 自定义校验规则函数 //验证码
-const checkCode = (_rule: any,value: any, callback: any) => {
-  console.log(code.value);
+const checkCode = (_rule: any, value: any, callback: any) => {
+  console.log(code.value)
   if (!value) {
     return callback(new Error('请输入验证码'))
   }
@@ -244,9 +277,6 @@ const rules = {
     { validator: checkCode, trigger: 'blur' },
   ],
 }
-
-
-
 </script>
 
 <style lang="scss">

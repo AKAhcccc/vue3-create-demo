@@ -7,13 +7,22 @@
           <el-col :span="10">
             <el-form-item label="预定时间">
               <el-col :span="7">
-                <el-date-picker v-model="formParam.date1" type="date" placeholder="开始" style="width: 100%" />
+                <el-date-picker
+                  v-model="formParam.date1"
+                  type="date"
+                  placeholder="开始"
+                  style="width: 100%"
+                />
               </el-col>
               <el-col :span="1" class="text-center">
                 <span class="text-gray-500">至</span>
               </el-col>
               <el-col :span="7">
-                <el-date-picker v-model="formParam.date2" placeholder="结束" style="width: 100%" />
+                <el-date-picker
+                  v-model="formParam.date2"
+                  placeholder="结束"
+                  style="width: 100%"
+                />
               </el-col>
               <el-button @click="OrderTimeSearch">搜索</el-button>
             </el-form-item>
@@ -40,8 +49,13 @@
           </el-col>
           <el-col style="margin-right: 1.25rem" :span="3">
             <el-form-item label="">
-              <el-input v-model="formParam.input1" class="w-50 m-2" @keyup.prevent="SearchEck" placeholder="搜索车次"
-                :prefix-icon="Search" />
+              <el-input
+                v-model="formParam.input1"
+                class="w-50 m-2"
+                @keyup.prevent="SearchEck"
+                placeholder="搜索车次"
+                :prefix-icon="Search"
+              />
             </el-form-item>
           </el-col>
           <el-col style="margin-right: 1.25rem" :span="3">
@@ -54,7 +68,8 @@
     </el-card>
     <!-- 身体数据部分 -->
     <div class="tables">
-      <header style="
+      <header
+        style="
           width: 100%;
           font-size: 14px;
           height: 3.125rem;
@@ -64,7 +79,8 @@
           flex-direction: row;
           flex-wrap: wrap;
           justify-content: space-around;
-        ">
+        "
+      >
         <div>订单信息</div>
         <div>车次/类型</div>
         <div>出发/到达站</div>
@@ -74,10 +90,15 @@
         <div>状态</div>
         <div>操作</div>
       </header>
-      <main style="width: 100%; height: 100%;">
-        <div class="list" style="width: 100%; height: 7.5rem; display: flex" v-for="(item, index) in OrderList"
-          :key="index">
-          <div style="
+      <main style="width: 100%; height: 100%">
+        <div
+          class="list"
+          style="width: 100%; height: 7.5rem; display: flex"
+          v-for="(item, index) in OrderList"
+          :key="index"
+        >
+          <div
+            style="
               position: relative;
               border-right: 0.0625rem #ccc solid;
               width: 11.875rem;
@@ -88,13 +109,22 @@
               align-content: center;
               align-items: center;
               justify-content: space-between;
-            ">
+            "
+          >
             <div>
-              <input style="width: 0.9375rem; height: 0.9375rem" type="checkbox" />
+              <input
+                style="width: 0.9375rem; height: 0.9375rem"
+                type="checkbox"
+              />
             </div>
             <div style="line-height: 1.5625rem">
-              <SvgIcon v-if="item.children" style="position: absolute; top: 10px; right: 0" name="DownFill" width="20px"
-                height="20px"></SvgIcon>
+              <SvgIcon
+                v-if="item.children"
+                style="position: absolute; top: 10px; right: 0"
+                name="DownFill"
+                width="20px"
+                height="20px"
+              ></SvgIcon>
               <div>{{ item.info }}</div>
               <div>{{ item.name }} {{ item.phone }}</div>
               <div>
@@ -108,14 +138,16 @@
             </div>
           </div>
           <div style="width: 6.25rem; height: 100%">
-            <div style="
+            <div
+              style="
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 width: 100%;
                 height: 100%;
-              ">
+              "
+            >
               <div style="font-size: 1.125rem; color: #00abbe">
                 {{ item.type1 }}
               </div>
@@ -123,7 +155,8 @@
             </div>
           </div>
           <div style="height: 100%; width: 14.375rem">
-            <div style="
+            <div
+              style="
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
@@ -131,19 +164,29 @@
                 justify-content: center;
                 width: 100%;
                 height: 100%;
-              ">
+              "
+            >
               <div style="display: flex">
-                <SvgIcon name="shi" width="0.9375rem" height="0.9375rem"></SvgIcon>
+                <SvgIcon
+                  name="shi"
+                  width="0.9375rem"
+                  height="0.9375rem"
+                ></SvgIcon>
                 <span>{{ item.address1 }}</span>
               </div>
               <div style="display: flex; margin-top: 0.625rem">
-                <SvgIcon name="guo" width="0.9375rem" height="0.9375rem"></SvgIcon>
+                <SvgIcon
+                  name="guo"
+                  width="0.9375rem"
+                  height="0.9375rem"
+                ></SvgIcon>
                 <span>{{ item.address2 }}</span>
               </div>
             </div>
           </div>
           <div style="height: 100%; width: 10rem">
-            <div style="
+            <div
+              style="
                 border-right: 0.0625rem #ccc solid;
                 line-height: 1.5625rem;
                 width: 100%;
@@ -153,13 +196,15 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 1.125rem;
-              ">
+              "
+            >
               <div>{{ item.time2 }}</div>
               <div style="color: #ccc">{{ item.time3 }}</div>
             </div>
           </div>
           <div style="height: 100%; width: 15rem; font-size: 1.25rem">
-            <div style="
+            <div
+              style="
                 display: flex;
                 flex-direction: column;
                 align-content: center;
@@ -167,19 +212,23 @@
                 flex-wrap: wrap;
                 width: 100%;
                 height: 100%;
-              ">
+              "
+            >
               <div>{{ item.name1 }}</div>
               <div style="font-weight: 700; margin-top: 0.625rem">
                 {{ item.time3 }}
               </div>
             </div>
           </div>
-          <div style="
+          <div
+            style="
               height: 100%;
               width: 13.75rem;
               border-right: 0.0625rem #ccc solid;
-            ">
-            <div style="
+            "
+          >
+            <div
+              style="
                 line-height: 1.5625rem;
                 height: 100%;
                 width: 100%;
@@ -189,28 +238,33 @@
                 justify-content: center;
                 align-items: flex-start;
                 flex-wrap: wrap;
-              ">
+              "
+            >
               <div style="color: coral">￥{{ item.num }}</div>
               <div style="font-weight: 700">{{ item.attend }}</div>
               <div>{{ item.grade }}</div>
             </div>
           </div>
           <div style="height: 100%; width: 10rem">
-            <div class="ys" style="
+            <div
+              class="ys"
+              style="
                 width: 100%;
                 height: 100%;
                 display: flex;
                 flex-wrap: wrap;
                 align-content: center;
                 justify-content: center;
-              ">
+              "
+            >
               <div style="font-size: 1.25rem" :style="activation(item)">
                 {{ item.state }}
               </div>
             </div>
           </div>
           <div style="height: 100%; width: 7.5rem">
-            <div style="
+            <div
+              style="
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -219,18 +273,31 @@
                 align-items: center;
                 width: 100%;
                 height: 100%;
-              ">
+              "
+            >
               <SvgIcon name="cha" width="1.875rem" height="1.875rem"></SvgIcon>
-              <SvgIcon class="yy" :class="{ fold: item.state === '已取消' }" name="order" width="1.875rem" height="1.875rem">
-              </SvgIcon>
+              <SvgIcon
+                class="yy"
+                :class="{ fold: item.state === '已取消' }"
+                name="order"
+                width="1.875rem"
+                height="1.875rem"
+              ></SvgIcon>
             </div>
           </div>
         </div>
       </main>
       <el-card>
-        <el-pagination v-model:current-page="pageNo" v-model:page-size="pageSize" :page-sizes="[3, 5]" :background="true"
-          layout="total, sizes,->,prev, pager, next, jumper" :total="total" @size-change="handleSizeChange"
-          @current-change="handleCurrentChange" />
+        <el-pagination
+          v-model:current-page="pageNo"
+          v-model:page-size="pageSize"
+          :page-sizes="[3, 5]"
+          :background="true"
+          layout="total, sizes,->,prev, pager, next, jumper"
+          :total="total"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        />
       </el-card>
     </div>
   </div>

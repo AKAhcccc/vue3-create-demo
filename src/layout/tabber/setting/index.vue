@@ -1,23 +1,53 @@
 <template>
   <div class="tabber-right">
-    <el-button size="small" icon="Refresh" @click="updateRefsh" circle></el-button>
-    <el-button size="small" icon="FullScreen" @click="fullScreen" circle></el-button>
+    <el-button
+      size="small"
+      icon="Refresh"
+      @click="updateRefsh"
+      circle
+    ></el-button>
+    <el-button
+      size="small"
+      icon="FullScreen"
+      @click="fullScreen"
+      circle
+    ></el-button>
 
     <!-- 主题颜色区块 -->
-    <el-popover placement="bottom" title="主题设置" :width="300" trigger="hover">
+    <el-popover
+      placement="bottom"
+      title="主题设置"
+      :width="300"
+      trigger="hover"
+    >
       <el-form>
         <el-form-item label="主题颜色">
-          <el-color-picker @change="setColor" v-model="color" show-alpha :predefine="predefineColors" />
+          <el-color-picker
+            @change="setColor"
+            v-model="color"
+            show-alpha
+            :predefine="predefineColors"
+          />
         </el-form-item>
         <el-form-item label="暗黑模式">
-          <el-switch @change="changeDark" v-model="dark" inline-prompt :active-icon="Sunny" :inactive-icon="Moon" />
+          <el-switch
+            @change="changeDark"
+            v-model="dark"
+            inline-prompt
+            :active-icon="Sunny"
+            :inactive-icon="Moon"
+          />
         </el-form-item>
       </el-form>
       <template #reference>
         <el-button size="small" icon="Setting" circle></el-button>
       </template>
     </el-popover>
-    <img :src="UserStore.avatar" alt="" style="width: 24px; height: 24px; border-radius: 50%; margin: 0 10px" />
+    <img
+      :src="UserStore.avatar"
+      alt=""
+      style="width: 24px; height: 24px; border-radius: 50%; margin: 0 10px"
+    />
     <!-- 下拉菜单 -->
     <el-dropdown>
       <span class="el-dropdown-link">
@@ -72,7 +102,6 @@ const predefineColors = ref([
   '#c7158577',
 ])
 
-
 // 刷新回调
 const updateRefsh = () => {
   LayoutOutSettingStore.refsh = !LayoutOutSettingStore.refsh
@@ -102,16 +131,16 @@ const logout = async () => {
 // Switch开关的chang事件进行暗黑模式切换
 const changeDark = () => {
   // 获取html的根节点
-  let html = document.documentElement;
+  let html = document.documentElement
   // 判断html标签是否有dark类名
-  dark.value? html.className = 'dark' : html.className = ''
+  dark.value ? (html.className = 'dark') : (html.className = '')
 }
 
 // 主题颜色设置
 const setColor = () => {
   //通过js修改根节点的样式对象的属性与属性值
-  const html = document.documentElement;
-  html.style.setProperty(`--el-color-primary`,color.value)
+  const html = document.documentElement
+  html.style.setProperty(`--el-color-primary`, color.value)
 }
 </script>
 

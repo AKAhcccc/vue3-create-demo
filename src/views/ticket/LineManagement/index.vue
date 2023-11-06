@@ -72,13 +72,7 @@
     </el-card>
     <!-- 主题数据部分 -->
     <div class="tables">
-      <header
-        style="
-          width: 100%;
-          height: 3.125rem;
-          border-radius: 0.625rem;
-        "
-      >
+      <header style="width: 100%; height: 3.125rem; border-radius: 0.625rem">
         <div style="width: 10%; text-align: center">ID</div>
         <div style="width: 10%; text-align: center">车次/类型</div>
         <div style="width: 40%; text-align: center">线路</div>
