@@ -84,8 +84,8 @@
         style="
           width: 100%;
           height: 80%;
-          overflow: auto;
           margin-bottom: 1.25rem;
+          overflow: auto;
           border-bottom: 0.0625rem solid #ccc;
         "
       >
@@ -95,8 +95,8 @@
             class="res1"
             style="
               width: 10%;
-              text-align: center;
               height: 100%;
+              text-align: center;
               border-right: 0.0625rem solid #ccc;
             "
           >
@@ -109,17 +109,17 @@
           </div>
           <div
             style="
+              display: flex;
               width: 40%;
               height: 100%;
               text-align: center;
-              display: flex;
               border-right: 0.0625rem solid #ccc;
             "
           >
             <div class="address" style="width: 40%; height: 100%">
               <div style="text-align: center">
                 <SvgIcon
-                  style="display: inline-block; top: 50; margin-right: 0.375rem"
+                  style="top: 50; display: inline-block; margin-right: 0.375rem"
                   name="Begin"
                   color=""
                   width="0.9375rem"
@@ -204,7 +204,7 @@
             <el-input v-model="formParam.input2" type="textarea" />
           </el-form-item>
           <el-row>
-            <div style="display: flex; position: relative; margin-left: 70px">
+            <div style="position: relative; display: flex; margin-left: 70px">
               <div
                 style="
                   width: 200px;
@@ -214,7 +214,7 @@
                 "
               >
                 <h5
-                  style="background-color: #d7dbe2; height: 30px; width: 100%"
+                  style="width: 100%; height: 30px; background-color: #d7dbe2"
                 >
                   <el-checkbox
                     v-model="checkAll"
@@ -257,7 +257,7 @@
               </div>
               <div style="width: 200px; height: 400px; border: 1px solid #ccc">
                 <h5
-                  style="background-color: #d7dbe2; height: 30px; width: 100%"
+                  style="width: 100%; height: 30px; background-color: #d7dbe2"
                 >
                   <el-checkbox
                     v-model="checkAll1"
@@ -588,9 +588,9 @@ const Submit = async () => {
 }
 
 .pagination {
-  margin: 3rem auto;
   display: flex;
   justify-content: center;
+  margin: 3rem auto;
 }
 
 .box {
@@ -611,13 +611,12 @@ const Submit = async () => {
 
     main {
       .LineList {
-        width: 100%;
-        height: 15%;
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
         align-content: center;
         align-items: center;
+        width: 100%;
+        height: 15%;
 
         .res1 {
           @include flex(column, center);

@@ -51,7 +51,7 @@ export const constantRoute = [
     component: () => import('@/views/screen/SocketLogin.vue'),
     name: 'SocketLogin',
     meta: {
-      title: '聊天室登录', //菜单标题
+      title: '聊天室', //菜单标题
       hidden: false,
       icon: 'Monitor',
     },

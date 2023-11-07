@@ -52,7 +52,7 @@
               <el-input
                 v-model="formParam.input1"
                 class="w-50 m-2"
-                @keyup.prevent="SearchEck"
+                @keyup.enter="SearchEck"
                 placeholder="搜索车次"
                 :prefix-icon="Search"
               />
@@ -70,15 +70,14 @@
     <div class="tables">
       <header
         style="
-          width: 100%;
-          font-size: 14px;
-          height: 3.125rem;
-          border-radius: 0.625rem;
           display: flex;
+          flex-flow: row wrap;
           align-content: center;
-          flex-direction: row;
-          flex-wrap: wrap;
           justify-content: space-around;
+          width: 100%;
+          height: 3.125rem;
+          font-size: 14px;
+          border-radius: 0.625rem;
         "
       >
         <div>订单信息</div>
@@ -93,22 +92,21 @@
       <main style="width: 100%; height: 100%">
         <div
           class="list"
-          style="width: 100%; height: 7.5rem; display: flex"
+          style="display: flex; width: 100%; height: 7.5rem"
           v-for="(item, index) in OrderList"
           :key="index"
         >
           <div
             style="
               position: relative;
-              border-right: 0.0625rem #ccc solid;
-              width: 11.875rem;
-              height: 100%;
               display: flex;
-              flex-direction: row;
-              flex-wrap: wrap;
+              flex-flow: row wrap;
               align-content: center;
               align-items: center;
               justify-content: space-between;
+              width: 11.875rem;
+              height: 100%;
+              border-right: 0.0625rem #ccc solid;
             "
           >
             <div>
@@ -142,8 +140,8 @@
               style="
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
+                justify-content: center;
                 width: 100%;
                 height: 100%;
               "
@@ -154,12 +152,11 @@
               <div style="margin-top: 0.3125rem">{{ item.type2 }}</div>
             </div>
           </div>
-          <div style="height: 100%; width: 14.375rem">
+          <div style="width: 14.375rem; height: 100%">
             <div
               style="
                 display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
+                flex-flow: column wrap;
                 align-content: center;
                 justify-content: center;
                 width: 100%;
@@ -184,60 +181,58 @@
               </div>
             </div>
           </div>
-          <div style="height: 100%; width: 10rem">
+          <div style="width: 10rem; height: 100%">
             <div
               style="
-                border-right: 0.0625rem #ccc solid;
-                line-height: 1.5625rem;
-                width: 100%;
-                height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                width: 100%;
+                height: 100%;
                 font-size: 1.125rem;
+                line-height: 1.5625rem;
+                border-right: 0.0625rem #ccc solid;
               "
             >
               <div>{{ item.time2 }}</div>
               <div style="color: #ccc">{{ item.time3 }}</div>
             </div>
           </div>
-          <div style="height: 100%; width: 15rem; font-size: 1.25rem">
+          <div style="width: 15rem; height: 100%; font-size: 1.25rem">
             <div
               style="
                 display: flex;
-                flex-direction: column;
+                flex-flow: column wrap;
                 align-content: center;
                 justify-content: center;
-                flex-wrap: wrap;
                 width: 100%;
                 height: 100%;
               "
             >
               <div>{{ item.name1 }}</div>
-              <div style="font-weight: 700; margin-top: 0.625rem">
+              <div style="margin-top: 0.625rem; font-weight: 700">
                 {{ item.time3 }}
               </div>
             </div>
           </div>
           <div
             style="
-              height: 100%;
               width: 13.75rem;
+              height: 100%;
               border-right: 0.0625rem #ccc solid;
             "
           >
             <div
               style="
-                line-height: 1.5625rem;
-                height: 100%;
-                width: 100%;
                 display: flex;
-                flex-direction: column;
+                flex-flow: column wrap;
                 align-content: center;
-                justify-content: center;
                 align-items: flex-start;
-                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                line-height: 1.5625rem;
               "
             >
               <div style="color: coral">￥{{ item.num }}</div>
@@ -245,16 +240,16 @@
               <div>{{ item.grade }}</div>
             </div>
           </div>
-          <div style="height: 100%; width: 10rem">
+          <div style="width: 10rem; height: 100%">
             <div
               class="ys"
               style="
-                width: 100%;
-                height: 100%;
                 display: flex;
                 flex-wrap: wrap;
                 align-content: center;
                 justify-content: center;
+                width: 100%;
+                height: 100%;
               "
             >
               <div style="font-size: 1.25rem" :style="activation(item)">
@@ -262,15 +257,14 @@
               </div>
             </div>
           </div>
-          <div style="height: 100%; width: 7.5rem">
+          <div style="width: 7.5rem; height: 100%">
             <div
               style="
                 display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
+                flex-flow: row wrap;
                 align-content: center;
-                justify-content: space-around;
                 align-items: center;
+                justify-content: space-around;
                 width: 100%;
                 height: 100%;
               "

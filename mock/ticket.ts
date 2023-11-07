@@ -1,3 +1,4 @@
+'use strict';
 import Ticket from '../data/Ticket.json'
 let TicketList: any = []
 export default [

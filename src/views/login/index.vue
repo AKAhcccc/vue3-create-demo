@@ -287,8 +287,8 @@ body,
   width: 100%;
   height: 100vh;
   background: url('@/assets/images/background1.jpg') no-repeat;
-  background-size: cover;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .login_box {
@@ -297,10 +297,10 @@ body,
 
   .login_form {
     position: relative;
-    width: 80%;
     top: 30vh;
-    background-color: rgba(0, 0, 0, 0.352);
+    width: 80%;
     padding: 40px;
+    background-color: rgb(0 0 0 / 35.2%);
 
     h1 {
       font-size: 30px;

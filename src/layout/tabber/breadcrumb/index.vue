@@ -8,6 +8,9 @@
     </el-icon>
     <!-- 面包屑 -->
     <el-breadcrumb separator-icon="ArrowRight">
+      <!-- 通过v-for指令遍历$route.matched数组，生成对应的面包屑项。
+        每个面包屑项由一个<el-breadcrumb-item>标签表示，其中包含一个图标和标题。
+          图标使用了动态组件，根据item.meta.icon的值来决定展示哪个组件。 -->
       <el-breadcrumb-item
         v-for="(item, index) in $route.matched"
         :key="index"

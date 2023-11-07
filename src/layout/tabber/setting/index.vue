@@ -46,7 +46,7 @@
     <img
       :src="UserStore.avatar"
       alt=""
-      style="width: 24px; height: 24px; border-radius: 50%; margin: 0 10px"
+      style="width: 24px; height: 24px; margin: 0 10px; border-radius: 50%"
     />
     <!-- 下拉菜单 -->
     <el-dropdown>
@@ -77,7 +77,7 @@ import { Moon, Sunny } from '@element-plus/icons-vue'
 let LayoutOutSettingStore = useLayoutOutSettingStore()
 
 let UserStore = useUserStore()
-const dark = ref(true)
+const dark = ref(false)
 
 // 获取路由器设置路由
 let $router = useRouter()

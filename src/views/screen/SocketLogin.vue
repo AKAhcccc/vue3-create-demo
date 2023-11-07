@@ -3,12 +3,8 @@
     <div class="chat-content">
       <!-- 模版语法通过ID判断是哪个用户 -->
       <template v-if="chatList && chatList.length">
-        <div
-          v-for="(chat, index) in chatList"
-          class="message-box"
-          :class="{ 'right-message': chat.user.id === userInfo.user.id }"
-          :key="index"
-        >
+        <div v-for="(chat, index) in chatList" class="message-box"
+          :class="{ 'right-message': chat.user.id === userInfo.user.id }" :key="index">
           <div v-if="chat.user.id !== userInfo.user.id" class="user">
             <el-avatar class="avatar" :src="chat.user.avatar"></el-avatar>
             <div class="info">
@@ -40,18 +36,8 @@
     </div>
     <div style="margin-top: 10px">
       当前用户：
-      <el-select
-        v-model="userInfo.user"
-        value-key="id"
-        @change="selectUser"
-        placeholder="Select"
-      >
-        <el-option
-          v-for="item in userList"
-          :key="item.id"
-          :label="item.name"
-          :value="item"
-        ></el-option>
+      <el-select v-model="userInfo.user" value-key="id" @change="selectUser" placeholder="Select">
+        <el-option v-for="item in userList" :key="item.id" :label="item.name" :value="item"></el-option>
       </el-select>
     </div>
   </div>
@@ -121,29 +107,29 @@ const sendMsg = () => {
 }
 
 .chat-content {
+  box-sizing: border-box;
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
   border-bottom: none;
-  box-sizing: border-box;
 
   .message-box {
     margin-bottom: 10px;
 
     .message {
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 5px;
       margin-left: 42px;
       border-radius: 4px;
-      box-sizing: border-box;
-      margin-top: 5px;
-      width: 100%;
 
       .block {
         display: inline-block;
+        padding: 8px;
         font-size: 14px;
         line-height: 1.5;
-        border-radius: 4px;
-        padding: 8px;
         background-color: #eee;
+        border-radius: 4px;
       }
     }
 
@@ -159,6 +145,7 @@ const sendMsg = () => {
 
     .info {
       @include flex(center);
+
       font-size: 12px;
       color: #999;
 
@@ -177,7 +164,7 @@ const sendMsg = () => {
 
       .user {
         .name {
-          margin-right: 0px;
+          margin-right: 0;
           margin-left: 10px;
         }
 
@@ -185,7 +172,7 @@ const sendMsg = () => {
       }
 
       .avatar {
-        margin-right: 0px;
+        margin-right: 0;
         margin-left: 10px;
       }
     }
@@ -193,15 +180,15 @@ const sendMsg = () => {
 }
 
 .empty {
-  font-size: 14px;
   padding: 50px 0;
+  font-size: 14px;
   text-align: center;
 }
 
 .chat-input {
   &:deep(.el-input__inner) {
-    border-top-right-radius: 0;
     border-top-left-radius: 0;
+    border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 }

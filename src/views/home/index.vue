@@ -8,8 +8,8 @@
             style="
               display: flex;
               flex-flow: row;
-              justify-content: space-around;
               align-items: center;
+              justify-content: space-around;
             "
           >
             <div class="cart_context1_left">
@@ -22,8 +22,8 @@
                   display: flex;
                   flex-direction: column;
                   align-content: center;
-                  justify-content: center;
                   align-items: flex-start;
+                  justify-content: center;
                 "
               >
                 <div>
@@ -39,22 +39,20 @@
             class="cart_context1_bottom"
             style="
               display: flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
+              flex-flow: row nowrap;
               align-content: center;
-              justify-content: flex-start;
               align-items: flex-start;
+              justify-content: flex-start;
             "
           >
             <div style="margin-right: 10px">日同比</div>
             <div
               style="
                 display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
+                flex-flow: row nowrap;
                 align-content: center;
-                justify-content: flex-start;
                 align-items: flex-start;
+                justify-content: flex-start;
                 color: aquamarine;
               "
             >
@@ -77,8 +75,8 @@
             style="
               display: flex;
               flex-flow: row;
-              justify-content: space-around;
               align-items: center;
+              justify-content: space-around;
             "
           >
             <div class="cart_context1_left">
@@ -91,8 +89,8 @@
                   display: flex;
                   flex-direction: column;
                   align-content: center;
-                  justify-content: center;
                   align-items: flex-start;
+                  justify-content: center;
                 "
               >
                 <div>
@@ -107,22 +105,20 @@
             class="cart_context1_bottom"
             style="
               display: flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
+              flex-flow: row nowrap;
               align-content: center;
-              justify-content: flex-start;
               align-items: flex-start;
+              justify-content: flex-start;
             "
           >
             <div style="margin-right: 10px">日同比</div>
             <div
               style="
                 display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
+                flex-flow: row nowrap;
                 align-content: center;
-                justify-content: flex-start;
                 align-items: flex-start;
+                justify-content: flex-start;
                 color: aquamarine;
               "
             >
@@ -145,8 +141,8 @@
             style="
               display: flex;
               flex-flow: row;
-              justify-content: space-around;
               align-items: center;
+              justify-content: space-around;
             "
           >
             <div class="cart_context1_left">
@@ -159,8 +155,8 @@
                   display: flex;
                   flex-direction: column;
                   align-content: center;
-                  justify-content: center;
                   align-items: flex-start;
+                  justify-content: center;
                 "
               >
                 <div>
@@ -175,22 +171,20 @@
             class="cart_context1_bottom"
             style="
               display: flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
+              flex-flow: row nowrap;
               align-content: center;
-              justify-content: flex-start;
               align-items: flex-start;
+              justify-content: flex-start;
             "
           >
             <div style="margin-right: 10px">日同比</div>
             <div
               style="
                 display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
+                flex-flow: row nowrap;
                 align-content: center;
-                justify-content: flex-start;
                 align-items: flex-start;
+                justify-content: flex-start;
                 color: aquamarine;
               "
             >
@@ -213,8 +207,8 @@
             style="
               display: flex;
               flex-flow: row;
-              justify-content: space-around;
               align-items: center;
+              justify-content: space-around;
             "
           >
             <div class="cart_context1_left">
@@ -227,8 +221,8 @@
                   display: flex;
                   flex-direction: column;
                   align-content: center;
-                  justify-content: center;
                   align-items: flex-start;
+                  justify-content: center;
                 "
               >
                 <div>
@@ -243,22 +237,20 @@
             class="cart_context1_bottom"
             style="
               display: flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
+              flex-flow: row nowrap;
               align-content: center;
-              justify-content: flex-start;
               align-items: flex-start;
+              justify-content: flex-start;
             "
           >
             <div style="margin-right: 10px">日同比</div>
             <div
               style="
                 display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
+                flex-flow: row nowrap;
                 align-content: center;
-                justify-content: flex-start;
                 align-items: flex-start;
+                justify-content: flex-start;
                 color: #ed1a60;
               "
             >
@@ -606,19 +598,19 @@ const option4 = ref({
   border-radius: 0.625rem;
 
   .container_top {
+    display: flex;
     width: 100%;
     height: 11.25rem;
     margin-bottom: 0.625rem;
-    display: flex;
 
     .cart_1 {
       width: 25%;
       height: 100%;
-      background-color: rgb(255, 255, 255);
-      border-radius: 0.625rem;
+      padding: 0.9375rem;
       margin-right: 0.75rem;
-      padding: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
+      background-color: rgb(255 255 255);
       border: 1px #ccc solid;
+      border-radius: 0.625rem;
 
       .cart_context1 {
         width: 100%;
@@ -645,63 +637,63 @@ const option4 = ref({
         }
 
         .cart_context1_bottom {
-          margin-top: 0.9375rem;
           width: 100%;
           height: 20%;
+          margin-top: 0.9375rem;
         }
       }
     }
   }
 
   .container_main {
+    display: flex;
     width: 100%;
     height: 26.875rem;
+    padding: 0.625rem;
     margin-bottom: 0.625rem;
     border-radius: 0.625rem;
-    padding: 0.625rem;
-    display: flex;
 
     .container_main_left {
-      height: 100%;
       width: 59.5%;
-      border-radius: 10px;
+      height: 100%;
       margin-right: 10px;
       background-color: #fff;
+      border-radius: 10px;
     }
 
     .container_main_right {
-      height: 100%;
       width: 39.5%;
-      border-radius: 10px;
+      height: 100%;
       background-color: #fff;
+      border-radius: 10px;
     }
   }
 
   .container_bottom {
+    display: flex;
     width: 100%;
     height: 15rem;
     border-radius: 0.625rem;
-    display: flex;
 
     .container_bottom_bom1 {
-      height: 100%;
       width: 33%;
+      height: 100%;
       margin-right: 10px;
       background-color: #fff;
       border-radius: 0.625rem;
     }
 
     .container_bottom_bom2 {
-      height: 100%;
       width: 33%;
+      height: 100%;
       margin-right: 10px;
       background-color: #fff;
       border-radius: 0.625rem;
     }
 
     .container_bottom_bom3 {
-      height: 100%;
       width: 33%;
+      height: 100%;
       margin-right: 10px;
       background-color: #fff;
       border-radius: 0.625rem;

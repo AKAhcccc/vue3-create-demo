@@ -39,7 +39,7 @@
     <el-table
       @selection-change="selectChange"
       border
-      style="margin: 10px 0px"
+      style="margin: 10px 0"
       :data="userArr"
     >
       <el-table-column type="selection" align="center"></el-table-column>
@@ -477,7 +477,7 @@ const reset = () => {
 <style scoped lang="scss">
 .form {
   display: flex;
-  justify-content: space-between;
   align-content: center;
+  justify-content: space-between;
 }
 </style>

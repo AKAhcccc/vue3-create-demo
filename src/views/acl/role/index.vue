@@ -371,8 +371,8 @@ const DeleteRole = async (id: number) => {
 <style scoped>
 .form {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 50px;
 }
 </style>

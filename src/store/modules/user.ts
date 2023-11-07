@@ -19,11 +19,12 @@ import router from '@/router'
 // @ts-expect-error This type is incorrect because <reason for ignoring the error>
 import cloneDeep from 'lodash/cloneDeep'
 
-// 用于过滤当前用户需要展示的异步路由
+// 定义filterAsyncRoute函数，用于过滤当前用户需要展示的异步路由。它根据传入的异步路由和需要展示的路由名称进行筛选，并递归处理子路由。
 function filterAsyncRoute(asyncRoute: any, routes: any) {
   return asyncRoute.filter((item: any) => {
     if (routes.includes(item.name)) {
       if (item.children && item.children.length > 0) {
+        // 递归
         item.children = filterAsyncRoute(item.children, routes)
       }
       return true
@@ -33,7 +34,9 @@ function filterAsyncRoute(asyncRoute: any, routes: any) {
 
 // 创建用户小仓库
 const useUserStore = defineStore('User', {
-  // 小仓库存储数据
+  // 该小仓库的初始状态包括用户的唯一标识token、
+  // 菜单路由menuRoutes、用户名username、
+  // 头像avatar和按钮权限buttons等信息。
   state: (): userState => {
     return {
       token: GET_TOKEN(), //用户唯一标识token
@@ -45,8 +48,15 @@ const useUserStore = defineStore('User', {
     }
   },
   //处理异步|逻辑
+  // 在actions中定义了三个方法：
+  // userLogin用于处理用户登录逻辑，
+  // userInfo用于获取用户详情信息，
+  // userLogout用于处理用户退出登录逻辑。
   actions: {
     // 用户登录方法
+    // // userLogin方法首先发送登录请求，并根据返回结果判断登录是否成功。
+    // 如果登录成功，将返回的token存储到仓库中，并使用SET_TOKEN方法将token存储到本地持久化。
+    // 如果登录失败，将返回一个带有错误信息的失败的Promise。
     async userLogin(data: loginFormData) {
       // 登录请求
       const result: loginResponseData = await reqLogin(data)
@@ -65,6 +75,9 @@ const useUserStore = defineStore('User', {
     },
 
     // 获取用户详情信息
+    // userInfo方法用于获取用户详情信息，并将信息存储到仓库中。
+    // 如果获取用户信息成功，将用户名、头像和按钮权限等信息存储到仓库中，并计算当前用户需要展示的异步路由。
+    // 然后将异步路由添加到菜单路由中，并使用router.addRoute方法将异步路由添加到路由器中。最后，返回一个成功的Promise。
     async userInfo() {
       // 获取用户的信息，存储于仓库当中，[头像，名字]
       const result: userInfoResponseData = await reqUserInfo()
@@ -98,6 +111,10 @@ const useUserStore = defineStore('User', {
     },
 
     // 退出登录
+    // userLogout方法用于处理用户退出登录逻辑。
+    // 发送退出登录请求，并根据返回结果判断退出登录是否成功。
+    // 如果退出登录成功，将清空仓库中的token、用户名和头像信息，并使用REMOVE_TOKEN方法从本地存储中移除token。
+    // 最后，返回一个成功的Promise。
     async userLogout() {
       const result: any = await reqLogout()
       if (result.code === 200) {

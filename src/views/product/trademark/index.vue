@@ -11,7 +11,7 @@
       添加品牌
     </el-button>
     <!-- 表格组件 -->
-    <el-table border style="margin: 15px 0px" :data="trademarkArr">
+    <el-table border style="margin: 15px 0" :data="trademarkArr">
       <el-table-column
         type="index"
         prop="date"
@@ -21,7 +21,7 @@
       />
       <el-table-column label="品牌名称" width="180px" align="center">
         <template #="{ row }">
-          <pre style="color: rgb(113, 27, 27)">{{ row.tmName }}</pre>
+          <pre style="color: rgb(113 27 27)">{{ row.tmName }}</pre>
         </template>
       </el-table-column>
       <el-table-column prop="address" label="品牌logo" align="center">
@@ -323,19 +323,19 @@ const deleteTrademark = async (id: number) => {
 
 <style scoped>
 .avatar-uploader .avatar {
+  display: block;
   width: 178px;
   height: 178px;
-  display: block;
 }
 </style>
 
 <style>
 .avatar-uploader .el-upload {
-  border: 1px dashed var(--el-border-color);
-  border-radius: 6px;
-  cursor: pointer;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  border: 1px dashed var(--el-border-color);
+  border-radius: 6px;
   transition: var(--el-transition-duration-fast);
 }
 
@@ -344,10 +344,10 @@ const deleteTrademark = async (id: number) => {
 }
 
 .el-icon.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
   width: 178px;
   height: 178px;
+  font-size: 28px;
+  color: #8c939d;
   text-align: center;
 }
 </style>

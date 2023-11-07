@@ -26,6 +26,7 @@ import pinia from '@/store'
 import permission from './permission'
 // 实例化getCurrentInstance
 // 挂载ECharts
+// 使用了Vue提供的createApp函数创建了一个Vue应用程序实例
 const app = createApp(App).component('ECharts', ECharts)
 // 安装仓库
 app.use(pinia)
@@ -46,7 +47,6 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 app.use(router)
 // 引入自定义指令文件
 import { isHasButton } from './directive/has'
-
 isHasButton(app)
 
 app.mount('#app')

@@ -84,8 +84,8 @@
       <header
         style="
           width: 100%;
-          font-size: 0.875rem;
           height: 50px;
+          font-size: 0.875rem;
           background-color: #d7dbe2;
           border-radius: 10px;
         "
@@ -108,8 +108,8 @@
         style="
           width: 100%;
           height: 80%;
-          overflow: auto;
           margin-bottom: 20px;
+          overflow: auto;
           border-bottom: 1px solid #ccc;
         "
       >
@@ -117,15 +117,15 @@
           <div
             style="
               width: 10%;
-              padding-top: 2.1875rem;
               height: 100%;
+              padding-top: 2.1875rem;
               text-align: center;
               border-right: 1px solid #ccc;
             "
           >
             {{ item.time }}
           </div>
-          <div class="res1" style="width: 8%; text-align: center; height: 100%">
+          <div class="res1" style="width: 8%; height: 100%; text-align: center">
             <div class="tt" style="font-size: 16px; color: #00cba8">
               <span :class="{ fold: item.type2 === '特快' }">
                 {{ item.type1 }}
@@ -143,17 +143,17 @@
                 @mouseenter="handleMouseEnter(item)"
                 @mouseleave="handleMouseLeave"
                 style="
-                  width: 16%;
-                  font-size: 1rem;
-                  height: 100%;
-                  text-align: center;
                   display: flex;
+                  width: 16%;
+                  height: 100%;
+                  font-size: 1rem;
+                  text-align: center;
                 "
               >
                 <div class="address" style="width: 100%; height: 100%">
                   <div style="text-align: center">
                     <SvgIcon
-                      style="display: inline-block; top: 50"
+                      style="top: 50; display: inline-block"
                       name="Begin"
                       color=""
                       width="15px"
@@ -175,13 +175,12 @@
 
                 <div
                   style="
-                    line-height: 0rem;
-                    margin-top: -1.4375rem;
                     display: flex;
-                    flex-direction: column;
-                    flex-wrap: nowrap;
-                    justify-content: center;
+                    flex-flow: column nowrap;
                     align-items: center;
+                    justify-content: center;
+                    margin-top: -1.4375rem;
+                    line-height: 0rem;
                   "
                 >
                   <div class="address_1" style="">
@@ -204,11 +203,11 @@
                 style="
                   width: 100%;
                   height: 10%;
-                  text-align: center;
                   margin-bottom: 10px;
+                  text-align: center;
                 "
               >
-                <span style="color: #00acbd; font-weight: 700">
+                <span style="font-weight: 700; color: #00acbd">
                   {{ title.type1 }}&nbsp;{{ title.type2 }}
                 </span>
                 &emsp;
@@ -219,9 +218,9 @@
               <div
                 class="title"
                 style="
+                  display: flex;
                   width: 100%;
                   height: 10%;
-                  display: flex;
                   background-color: #cceef1;
                   border-radius: 6px;
                 "
@@ -244,11 +243,11 @@
               </div>
               <div
                 style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
                   width: 100%;
                   height: 16%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
                   border-bottom: 1px solid #ccc;
                 "
               >
@@ -285,11 +284,11 @@
               </div>
               <div
                 style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
                   width: 100%;
                   height: 16%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
                   border-bottom: 1px solid #ccc;
                 "
               >
@@ -326,11 +325,11 @@
               </div>
               <div
                 style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
                   width: 100%;
                   height: 16%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
                   border-bottom: 1px solid #ccc;
                 "
               >
@@ -367,11 +366,11 @@
               </div>
               <div
                 style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
                   width: 100%;
                   height: 16%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
                   border-bottom: 1px solid #ccc;
                 "
               >
@@ -408,11 +407,11 @@
               </div>
               <div
                 style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
                   width: 100%;
                   height: 16%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
                   border-bottom: 1px solid #ccc;
                 "
               >
@@ -449,11 +448,11 @@
               </div>
               <div
                 style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
                   width: 100%;
                   height: 16%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
                   border-bottom: 1px solid #ccc;
                 "
               >
@@ -492,16 +491,16 @@
           </el-popover>
           <div
             style="
+              display: flex;
+              flex-direction: column;
+              flex-flow: column;
+              align-items: flex-start;
+              justify-content: center;
+              width: 10%;
+              height: 100%;
               padding-left: 0.9375rem;
               line-height: 1.25rem;
-              height: 100%;
               border-right: 0.0625rem #ccc solid;
-              width: 10%;
-              display: flex;
-              flex-flow: column;
-              justify-content: center;
-              align-items: flex-start;
-              flex-direction: column;
             "
           >
             <div>
@@ -515,17 +514,17 @@
             class="type1"
             style="
               width: 15%;
+              height: 100%;
               font-size: 0.875rem;
               text-align: center;
-              height: 100%;
               border-right: 0.0625rem solid #ccc;
             "
           >
             <div
               style="
+                display: flex;
                 width: 100%;
                 height: 25%;
-                display: flex;
                 font-size: 0.75rem;
               "
             >
@@ -544,9 +543,9 @@
             </div>
             <div
               style="
+                display: flex;
                 width: 100%;
                 height: 25%;
-                display: flex;
                 font-size: 0.75rem;
               "
             >
@@ -565,9 +564,9 @@
             </div>
             <div
               style="
+                display: flex;
                 width: 100%;
                 height: 25%;
-                display: flex;
                 font-size: 0.75rem;
               "
             >
@@ -586,9 +585,9 @@
             </div>
             <div
               style="
+                display: flex;
                 width: 100%;
                 height: 25%;
-                display: flex;
                 font-size: 0.75rem;
               "
             >
@@ -609,7 +608,7 @@
             style="width: 10%; height: 100%; text-align: center"
           >
             <div
-              style="margin-left: 5.625rem; margin-top: 1.875rem"
+              style="margin-top: 1.875rem; margin-left: 5.625rem"
               :class="{ fold: item.date === '未提交' }"
             >
               {{ item.date }}
@@ -617,7 +616,7 @@
           </div>
           <div style="width: 15%; height: 100%">
             <div
-              style="margin-left: 7.5rem; margin-top: 1.25rem; color: #00cba8"
+              style="margin-top: 1.25rem; margin-left: 7.5rem; color: #00cba8"
             >
               <el-switch
                 v-model="state"
@@ -632,15 +631,14 @@
           </div>
           <div
             style="
-              margin-left: -1.875rem;
-              width: 15%;
-              height: 100%;
               display: flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
+              flex-flow: row nowrap;
               align-content: center;
               align-items: center;
               justify-content: flex-end;
+              width: 15%;
+              height: 100%;
+              margin-left: -1.875rem;
             "
           >
             <el-button
@@ -1109,9 +1107,9 @@ const Submit = async () => {
 }
 
 .pagination {
-  margin: 48px auto;
   display: flex;
   justify-content: center;
+  margin: 48px auto;
 }
 
 .box {
@@ -1132,13 +1130,12 @@ const Submit = async () => {
 
     main {
       .LineList {
-        width: 100%;
-        height: 15%;
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
         align-content: center;
         align-items: center;
+        width: 100%;
+        height: 15%;
 
         .type1 {
           div {
@@ -1157,7 +1154,7 @@ const Submit = async () => {
 
           div {
             &.fold {
-              color: rgb(217, 63, 63);
+              color: rgb(217 63 63);
             }
           }
         }

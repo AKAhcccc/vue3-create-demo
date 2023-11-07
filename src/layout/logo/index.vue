@@ -11,23 +11,23 @@ import setting from '@/setting'
 
 <style scoped lang="scss">
 .logo {
-  width: 95%;
   display: flex;
-  align-items: center;
-  height: $base-menu-logo-height;
-  color: #959ea6;
-  font-weight: 700;
-  font-size: $base-menu-logo-title-size;
   flex-wrap: nowrap;
-  overflow: hidden;
+  align-items: center;
+  width: 95%;
+  height: $base-menu-logo-height;
   padding-left: 17px;
+  overflow: hidden;
+  font-size: $base-menu-logo-title-size;
+  font-weight: 700;
+  color: #959ea6;
 
   img {
     display: inline-block;
-    widows: 30px;
     height: 30px;
-    border-radius: 10px;
     margin-right: 15px;
+    border-radius: 10px;
+    widows: 30px;
   }
 
   .title {

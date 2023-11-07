@@ -1,4 +1,5 @@
 // createUserList:此函数执行会返回一个数组，数组里面包含两个用户信息
+'use strict';
 function createUserList() {
   return [
     {

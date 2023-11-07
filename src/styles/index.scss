@@ -1,18 +1,20 @@
 // 引入清除默认样式
-@import './reset.scss';
+@import './reset';
 
 // 滚动条外观设置
 // 宽度
 ::-webkit-scrollbar {
     width: 10px;
 }
+
 // 滚动条背景色
 ::-webkit-scrollbar-track {
     background-color:$base-menu-background;
 }
+
 // 滚动条样式
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(#DAA520,#010002,#FFFFFF,#E0E1E3 );
     width: 10px;
+    background: linear-gradient(#DAA520,#010002,#FFF,#E0E1E3 );
     border-radius:15px ;
 }

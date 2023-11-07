@@ -174,7 +174,7 @@
   </el-card>
   <!-- 新增与修改抽屉 -->
   <el-drawer
-    style="padding: 10px; background-color: rgb(247, 247, 247)"
+    style="padding: 10px; background-color: rgb(247 247 247)"
     size="80%"
     v-model="drawer"
     :direction="direction"
@@ -522,15 +522,14 @@ const DelectList = async (id: string) => {
 <style scoped lang="scss">
 .base_add {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-flow: row nowrap;
   align-content: center;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   h1 {
-    color: rgb(21, 210, 147);
     font-size: 24px;
+    color: rgb(21 210 147);
   }
 }
 </style>

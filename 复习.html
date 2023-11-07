@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //一、此处是手写call
+    // 因为需要满足任何函数都可调用的原理，所以将方法挂载到函数原型链上   由于传递过来的数值不是固定的，所以我通过es6新语法扩展运算符将接受的值存储为一个数组整体
+    Function.prototype.myCall = function (thisAge, ...args) {
+        // 声明一个一定不与其他属性名重名的唯一属性值
+        const key = Symbol('key');
+        // 此处的this就是谁调用了myCall方法，this就指向谁
+        // 我将func原型this赋值给传递过来的对象
+        thisAge[key] = this;
+        // 将数组展开并传递数值
+        const res = thisAge[key](...args)
+        // 因为上面的属性是动态赋值的，我为了不破坏原函数，所以此处需要执行一个删除
+        delete thisAge[key];
+        // 最后将结果返回
+        return res
+    }
+    // 创建一个对象
+    const obj = {
+        name: "时天博"
+    }
+    // 创建一个函数，传递两个形参作为参数
+    function func(numA, numB) {
+        console.log(this);
+        console.log(numA, numB);
+        // 计算结果并返回
+        return numA + numB;
+    }
+    // 调用手写myCall 将obj对象作为this传递给myCall方法,后面实参是需要传递的数值
+    const res = func.myCall(obj, 9, 16)
+    console.log(res, "res", "call");
+
+
+    // 二、此处是手写apply;
+    // 与上同理，我也需要让任何函数都可以点出这个方法，所以挂在到原链接上   我需要将thisAge1重新绑定this，因为传递的本身就是一个数组，所以我不需要再次使用扩展运算符接收
+    Function.prototype.myApply = function (thisAge1, args1) {
+        // 同上，定义一个唯一属性(此方法算一个小优化);
+        const key1 = Symbol('key');
+        // 我需要为thisAge重新绑定this，此处this与上方同理
+        thisAge1[key1] = this
+        // 定义res变量，用于接受数据，并且后期返回, 因为我传递的本身就是一个数组，所以我需要将数组展开
+        const res = thisAge1[key1](...args1);
+        // 同理：清除动态属性
+        delete thisAge1[key1];
+        // 返回数据
+        return res
+
+    }
+
+    // 也是创建了一个对象
+    const obj1 = {
+        name: "时天博1"
+    }
+    // 我又创建了一个函数
+    function func1(numA, numB, numC) {
+        console.log(this);
+        console.log(numA, numB, numC);
+        // 我又计算了一次结果，并且返回值
+        return numA + numB + numC;
+    }
+    // 此处定义一个变量，用以接受结果， 我将obj1对象传入进我的myApply，并且传递一个数组（注：Apply方法后续形参仅接收一个数组）
+    const res1 = func1.myApply(obj, [6, 9, 12]);
+    console.log(res1, "Res1", "apply");
+
+    // 三、此处为bind
+    // 同理
+    Function.prototype.myBind = function(thisAge2,...args2){
+        // 因为bind需要返回一个新的函数，所以我通过return一个箭头函数实现。
+        // 因为箭头函数会向上一层作用域请求this
+        // this的值就是myBind的调用者
+        // 注:此处需要接收二次调用bind的剩余实参
+        return (...reArgs) => {
+            // 将return的新函数返回 
+            // 数值传递顺序，需要依次传递
+            return this.call(thisAge2,...args2,...reArgs);
+        }
+    }
+
+    // 我又又定义了一个对象
+    const obj2 = {
+        name: "时天博2"
+    }
+
+    function func2(num1, num2, num3, num4) {
+        console.log(this);
+        console.log(num1, num2, num3, num4);
+        // 我又又计算了一次结果
+        return num1 + num2 + num3 + num4;
+    }
+    // 注：bind方法会返回一个新函数，所以我需要二次调用，并传递其余实参
+    const res2 = func2.myBind(obj2,9,12);
+    const res3 = res2(15,18);
+    console.log(res3,"res3","bind");
+</script>
+
+</html>

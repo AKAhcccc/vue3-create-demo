@@ -17,12 +17,13 @@ export default {
 
 <style scoped lang="scss">
 .tabber {
-  height: 100%;
-  white: 100%;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
+  height: 100%;
+  white: 100%;
+
   .tabber_left {
     display: flex;
     align-content: center;
@@ -31,10 +32,8 @@ export default {
 
   .tabber-right {
     display: flex;
+    flex-flow: row wrap;
     align-content: center;
-    flex-direction: row;
-    align-content: center;
-    flex-wrap: wrap;
   }
 }
 </style>
