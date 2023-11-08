@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch, ref, nextTick, } from 'vue'
+import { watch, ref, nextTick } from 'vue'
 import useLayOutSettingStore from '@/store/modules/setting'
 let LayOutSettingStore = useLayOutSettingStore()
 // 是否销毁当前组件并且重建

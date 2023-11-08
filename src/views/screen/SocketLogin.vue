@@ -3,8 +3,12 @@
     <div class="chat-content">
       <!-- 模版语法通过ID判断是哪个用户 -->
       <template v-if="chatList && chatList.length">
-        <div v-for="(chat, index) in chatList" class="message-box"
-          :class="{ 'right-message': chat.user.id === userInfo.user.id }" :key="index">
+        <div
+          v-for="(chat, index) in chatList"
+          class="message-box"
+          :class="{ 'right-message': chat.user.id === userInfo.user.id }"
+          :key="index"
+        >
           <div v-if="chat.user.id !== userInfo.user.id" class="user">
             <el-avatar class="avatar" :src="chat.user.avatar"></el-avatar>
             <div class="info">
@@ -36,8 +40,18 @@
     </div>
     <div style="margin-top: 10px">
       当前用户：
-      <el-select v-model="userInfo.user" value-key="id" @change="selectUser" placeholder="Select">
-        <el-option v-for="item in userList" :key="item.id" :label="item.name" :value="item"></el-option>
+      <el-select
+        v-model="userInfo.user"
+        value-key="id"
+        @change="selectUser"
+        placeholder="Select"
+      >
+        <el-option
+          v-for="item in userList"
+          :key="item.id"
+          :label="item.name"
+          :value="item"
+        ></el-option>
       </el-select>
     </div>
   </div>

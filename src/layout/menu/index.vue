@@ -5,9 +5,16 @@
     <template v-for="item in menuList" :key="item.path">
       <!-- 使用v-if指令判断当前遍历到的菜单项是否有子路由。如果没有子路由，则生成一个单独的菜单项。 -->
       <template v-if="!item.children">
-        <el-menu-item v-if="!item.meta.hidden" :index="item.path" @click="goRoute">
+        <el-menu-item
+          v-if="!item.meta.hidden"
+          :index="item.path"
+          @click="goRoute"
+        >
           <el-icon>
-            <component style="width: 1em; height: 1em; margin-right: 8px" :is="item.meta.icon"></component>
+            <component
+              style="width: 1em; height: 1em; margin-right: 8px"
+              :is="item.meta.icon"
+            ></component>
           </el-icon>
           <template #title>
             <span>{{ item.meta.title }}</span>
@@ -21,9 +28,16 @@
         菜单项的图标使用component动态绑定，item.meta.icon指定了图标的组件名称，通过:is属性进行渲染。
         菜单项的标题使用插槽#title进行渲染。 -->
       <template v-if="item.children && item.children.length == 1">
-        <el-menu-item v-if="!item.children[0].meta.hidden" :index="item.children[0].path" @click="goRoute">
+        <el-menu-item
+          v-if="!item.children[0].meta.hidden"
+          :index="item.children[0].path"
+          @click="goRoute"
+        >
           <el-icon>
-            <component style="width: 1em; height: 1em; margin-right: 8px" :is="item.children[0].meta.icon"></component>
+            <component
+              style="width: 1em; height: 1em; margin-right: 8px"
+              :is="item.children[0].meta.icon"
+            ></component>
           </el-icon>
           <template #title>
             <span>{{ item.children[0].meta.title }}</span>
@@ -37,7 +51,10 @@
         <el-sub-menu :index="item.path">
           <template #title>
             <el-icon>
-              <component style="width: 1em; height: 1em; margin-right: 8px" :is="item.meta.icon"></component>
+              <component
+                style="width: 1em; height: 1em; margin-right: 8px"
+                :is="item.meta.icon"
+              ></component>
             </el-icon>
             <span>{{ item.meta.title }}</span>
           </template>

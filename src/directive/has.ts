@@ -1,6 +1,6 @@
 import pinia from '@/store'
 import useUserStore from '@/store/modules/user'
-const userStore = useUserStore(pinia);
+const userStore = useUserStore(pinia)
 
 // 该函数接受一个Vue应用实例
 export const isHasButton = (app: any) => {
